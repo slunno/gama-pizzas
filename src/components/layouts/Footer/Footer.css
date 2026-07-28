@@ -1,0 +1,36 @@
+.footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:40px 20px;
+
+}
+
+
+.footer-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.footer h2{
+
+    margin-bottom:15px;
+
+}
+
+
+.footer p{
+
+    opacity:.8;
+
+    margin:8px 0;
+
+}

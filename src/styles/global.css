@@ -1,0 +1,15 @@
+:root{
+
+    --primary:#141A33;
+    --orange:#F77E2E;
+    --white:#FFFFFF;
+
+}
+
+
+body{
+
+    background:var(--primary);
+    color:var(--white);
+
+}
