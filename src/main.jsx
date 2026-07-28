@@ -1,41 +1,33 @@
 import React from "react";
-
 import ReactDOM from "react-dom/client";
 
-import AOS from "aos";
+import {
+    BrowserRouter
+} from "react-router-dom";
 
-import "aos/dist/aos.css";
 
 import App from "./App.jsx";
 
+
+import "./styles/reset.css";
+import "./styles/variables.css";
 import "./styles/global.css";
-
 import "./styles/responsive.css";
+import "./styles/animations.css";
 
 
-AOS.init({
-
-    duration:800,
-
-    easing:"ease-in-out",
-
-    once:true,
-
-    offset:120
-
-});
-
-
-
-ReactDOM
-.createRoot(
+ReactDOM.createRoot(
     document.getElementById("root")
 )
 .render(
 
     <React.StrictMode>
 
-        <App />
+        <BrowserRouter>
+
+            <App />
+
+        </BrowserRouter>
 
     </React.StrictMode>
 

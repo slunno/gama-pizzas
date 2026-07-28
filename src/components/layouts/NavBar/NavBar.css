@@ -1,5 +1,5 @@
 /* =====================================================
-   NAVBAR PREMIUM - GAMA PIZZAS
+   NAVBAR PREMIUM - GAMA PIZZA
 ===================================================== */
 
 
@@ -15,32 +15,45 @@
 
     z-index:999;
 
-    padding:12px 0;
+    padding:15px 0;
 
     transition:.35s ease;
 
 }
 
 
+
+/* =====================================================
+        NAVBAR AO ROLAR
+===================================================== */
+
+
 .navbar.scrolled{
 
-    background:rgba(15,18,40,.92);
+    background:
 
-    backdrop-filter:blur(15px);
+    rgba(10,12,25,.90);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
 
     box-shadow:
+
     0 10px 30px rgba(0,0,0,.35);
 
 }
 
 
 
-/* CONTAINER */
+/* =====================================================
+        CONTAINER
+===================================================== */
+
 
 .navbar-container{
 
-
-    width:min(90%,1200px);
+    width:min(92%,1200px);
 
     margin:auto;
 
@@ -50,14 +63,13 @@
 
     justify-content:space-between;
 
-
 }
 
 
 
-/* ==========================
+/* =====================================================
         LOGO
-========================== */
+===================================================== */
 
 
 .navbar-logo{
@@ -66,48 +78,44 @@
 
     align-items:center;
 
+    text-decoration:none;
+
 }
 
 
 
 .navbar-logo img{
 
-
-    width:85px;
+    width:105px;
 
     height:auto;
 
-    transition:.3s;
-
+    transition:.3s ease;
 
 }
+
 
 
 .navbar-logo:hover img{
 
-
     transform:scale(1.05);
-
 
 }
 
 
 
-
-/* ==========================
+/* =====================================================
         MENU
-========================== */
+===================================================== */
 
 
 .navbar-menu{
-
 
     display:flex;
 
     align-items:center;
 
-    gap:28px;
-
+    gap:35px;
 
 }
 
@@ -115,19 +123,17 @@
 
 .navbar-menu a{
 
-
     position:relative;
-
-    color:white;
 
     text-decoration:none;
 
-    font-size:15px;
+    color:white;
+
+    font-size:16px;
 
     font-weight:600;
 
     transition:.3s;
-
 
 }
 
@@ -135,16 +141,16 @@
 
 .navbar-menu a:hover{
 
-
     color:var(--primary-color);
-
 
 }
 
 
 
-.navbar-menu a::after{
+/* LINHA LARANJA */
 
+
+.navbar-menu a::after{
 
     content:"";
 
@@ -152,7 +158,7 @@
 
     left:0;
 
-    bottom:-6px;
+    bottom:-8px;
 
     width:0;
 
@@ -162,57 +168,50 @@
 
     transition:.3s;
 
-
 }
+
 
 
 .navbar-menu a:hover::after{
 
-
     width:100%;
-
 
 }
 
 
 
-
-/* ==========================
+/* =====================================================
         BOTÃO WHATSAPP
-========================== */
+===================================================== */
 
 
 .navbar-button{
-
 
     display:flex;
 
     align-items:center;
 
-    gap:8px;
+    justify-content:center;
 
-
-    background:#25D366;
-
-    color:white !important;
-
-
-    padding:11px 20px;
-
-
-    border-radius:50px;
-
+    gap:10px;
 
     text-decoration:none;
 
+    background:var(--primary-color);
+
+    color:#111;
+
+    padding:13px 25px;
+
+    border-radius:50px;
 
     font-weight:700;
 
-    font-size:15px;
-
-
     transition:.3s;
 
+    box-shadow:
+
+    0 10px 25px rgba(242,140,56,.25);
 
 }
 
@@ -220,51 +219,58 @@
 
 .navbar-button:hover{
 
+    transform:translateY(-4px);
 
-    transform:translateY(-3px);
+    box-shadow:
 
+    0 15px 35px rgba(242,140,56,.40);
 
 }
 
 
 
-
-
-/* ==========================
-        MOBILE BUTTON
-========================== */
+/* =====================================================
+        MENU MOBILE
+===================================================== */
 
 
 .navbar-toggle{
 
-
     display:none;
-
-    background:none;
 
     border:none;
 
+    background:none;
+
     color:white;
 
-    font-size:28px;
+    cursor:pointer;
+
+    font-size:30px;
 
 }
 
 
 
-
-
-/* ==========================
-        TABLET / MOBILE
-========================== */
+/* =====================================================
+        TABLET
+===================================================== */
 
 
 @media(max-width:992px){
 
 
+    .navbar-container{
+
+        width:90%;
+
+    }
+
+
+
     .navbar-logo img{
 
-        width:75px;
+        width:95px;
 
     }
 
@@ -272,35 +278,33 @@
 
     .navbar-menu{
 
-
         position:fixed;
 
         top:0;
 
         right:-100%;
 
-
-        width:280px;
+        width:300px;
 
         height:100vh;
 
-
-        background:#101428;
-
+        background:#10132b;
 
         display:flex;
 
         flex-direction:column;
 
-
         justify-content:center;
 
+        align-items:center;
 
         gap:35px;
 
+        transition:.4s ease;
 
-        transition:.4s;
+        box-shadow:
 
+        -10px 0 30px rgba(0,0,0,.40);
 
     }
 
@@ -308,9 +312,15 @@
 
     .navbar-menu.active{
 
-
         right:0;
 
+    }
+
+
+
+    .navbar-menu a{
+
+        font-size:20px;
 
     }
 
@@ -318,9 +328,7 @@
 
     .navbar-button{
 
-
         display:none;
-
 
     }
 
@@ -328,54 +336,40 @@
 
     .navbar-toggle{
 
+        display:flex;
 
-        display:block;
+        align-items:center;
 
+        justify-content:center;
 
     }
 
 
 }
-@media(max-width:768px){
-
-
-.navbar{
-
-
-    padding:8px 0;
-
-
-}
 
 
 
-.navbar-container{
+/* =====================================================
+        MOBILE
+===================================================== */
 
 
-    width:90%;
+@media(max-width:600px){
 
 
-}
+    .navbar-logo img{
 
+        width:90px;
 
-
-.navbar-logo img{
-
-
-    width:70px;
-
-
-}
+    }
 
 
 
-.navbar-menu a{
+    .navbar-menu{
 
+        width:100%;
 
-    font-size:18px;
-
-
-}
+    }
 
 
 }

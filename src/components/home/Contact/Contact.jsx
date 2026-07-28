@@ -6,6 +6,8 @@ import {
 } from "react-icons/fa";
 
 
+import { buildWhatsAppLink } from "../../../utils/whatsapp";
+
 import "./Contact.css";
 
 
@@ -63,7 +65,9 @@ function Contact(){
 
 
                         <a
-                            href="https://wa.me/5543984483051"
+                            href={buildWhatsAppLink(
+                                "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas."
+                            )}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="contact-whatsapp"

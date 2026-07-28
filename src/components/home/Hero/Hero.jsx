@@ -3,17 +3,16 @@ import { FaWhatsapp, FaPizzaSlice } from "react-icons/fa";
 import logo from "../../../assets/images/logo.png";
 import background from "../../../assets/images/pizza-background.png";
 
+import { buildWhatsAppLink } from "../../../utils/whatsapp";
+
 import "./Hero.css";
 
 
 function Hero() {
 
 
-    const whatsappNumber = "5543984483051";
-
-
-    const message = encodeURIComponent(
-        "Olá! Gostaria de conhecer o rodízio da Gama Pizzas."
+    const whatsappLink = buildWhatsAppLink(
+        "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas."
     );
 
 
@@ -97,7 +96,7 @@ function Hero() {
 
 
                     <a
-                        href={`https://wa.me/${whatsappNumber}?text=${message}`}
+                        href={whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hero-button whatsapp"

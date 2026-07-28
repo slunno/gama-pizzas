@@ -1,5 +1,8 @@
-import "./Rodizios.css";
 import { flavors } from "../../../data/flavorsData";
+
+import { buildWhatsAppLink } from "../../../utils/whatsapp";
+
+import "./Rodizios.css";
 
 import {
     FaPizzaSlice,
@@ -8,6 +11,7 @@ import {
     FaChild,
     FaWhatsapp
 } from "react-icons/fa";
+
 
 
 const menus = [
@@ -22,6 +26,7 @@ const menus = [
         highlight: false
     },
 
+
     {
         title: "Rodízio de Pizzas - Cardápio 2",
         icon: <FaPizzaSlice />,
@@ -31,6 +36,7 @@ const menus = [
         minimum: "Mínimo de 25 adultos ou R$ 1.500,00",
         highlight: true
     },
+
 
     {
         title: "Pizza + Mini Hambúrguer - Cardápio 1",
@@ -42,6 +48,7 @@ const menus = [
         highlight: false
     },
 
+
     {
         title: "Pizza + Mini Hambúrguer - Cardápio 2",
         icon: <FaHamburger />,
@@ -52,13 +59,16 @@ const menus = [
         highlight: true
     },
 
+
     {
         title: "Rodízio de Mini Hambúrguer",
         icon: <FaHamburger />,
         price: "R$ 55,00",
         child: "R$ 27,00",
-        flavors: "Mini hambúrguer, mini hot dog, batata frita e mini churros",
-        minimum: "Consulte condições para seu evento",
+        flavors:
+        "Mini hambúrguer, mini hot dog, batata frita e mini churros",
+        minimum:
+        "Consulte condições para seu evento",
         highlight: false
     }
 
@@ -76,28 +86,37 @@ function Rodizios() {
             id="rodizios"
         >
 
+
             <div className="rodizios-container">
+
 
 
                 <div className="section-header">
 
+
                     <span>
                         Nossos Cardápios
                     </span>
+
 
                     <h2>
                         Escolha a melhor opção
                         para o seu evento
                     </h2>
 
+
                     <p>
+
                         Levamos toda a estrutura necessária:
                         forno, ingredientes, pizzaiolo e equipe
                         preparada para transformar seu evento
                         em uma experiência inesquecível.
+
                     </p>
 
+
                 </div>
+
 
 
 
@@ -105,21 +124,29 @@ function Rodizios() {
 
 
                     {
-                        menus.map((menu, index) => (
+                        menus.map((menu,index)=>(
+
 
                             <div
-                                className={`menu-card ${
+
+                                className={
+                                    `menu-card ${
                                     menu.highlight
                                     ? "highlight"
                                     : ""
-                                }`}
+                                    }`
+                                }
+
                                 key={index}
-                                data-aos="fade-up"
-                                data-aos-delay={index * 100}
+
                             >
 
+
+
                                 {
-                                    menu.highlight && (
+                                    menu.highlight &&
+
+                                    (
 
                                         <div className="badge">
 
@@ -131,11 +158,16 @@ function Rodizios() {
                                 }
 
 
+
+
+
                                 <div className="menu-icon">
 
                                     {menu.icon}
 
                                 </div>
+
+
 
 
                                 <h3>
@@ -145,15 +177,24 @@ function Rodizios() {
                                 </h3>
 
 
+
+
                                 <div className="price">
+
 
                                     {menu.price}
 
+
                                     <small>
+
                                         adulto
+
                                     </small>
 
+
                                 </div>
+
+
 
 
                                 <div className="info">
@@ -169,6 +210,8 @@ function Rodizios() {
                                     </p>
 
 
+
+
                                     <p>
 
                                         <FaPizzaSlice />
@@ -176,6 +219,8 @@ function Rodizios() {
                                         {menu.flavors}
 
                                     </p>
+
+
 
 
                                     <p>
@@ -187,24 +232,41 @@ function Rodizios() {
                                     </p>
 
 
+
                                 </div>
 
 
+
+
+
                                 <a
-                                    href="https://wa.me/5543984483051"
+
+                                    href={buildWhatsAppLink(
+                                        `Olá! Gostaria de solicitar um orçamento para o ${menu.title} (${menu.price} por adulto).`
+                                    )}
+
                                     target="_blank"
-                                    rel="noreferrer"
+
+                                    rel="noopener noreferrer"
+
                                     className="menu-button"
+
                                 >
+
 
                                     <FaWhatsapp />
 
+
                                     Solicitar orçamento
+
 
                                 </a>
 
 
+
+
                             </div>
+
 
                         ))
 
@@ -212,103 +274,160 @@ function Rodizios() {
 
 
                 </div>
+
+
+
+
+
+
                 <div className="flavors-section">
 
 
+
                     <div className="flavors-header">
+
 
                         <span>
                             Sabores disponíveis
                         </span>
 
+
                         <h2>
                             Conheça nossos sabores
                         </h2>
 
+
                         <p>
-                            Trabalhamos com opções salgadas e doces
-                            para deixar seu evento completo.
+
+                            Trabalhamos com opções salgadas
+                            e doces para deixar seu evento completo.
+
                         </p>
 
+
                     </div>
+
+
 
 
 
                     <div className="flavors-grid">
 
 
+
                         {
+
                             Object.values(flavors).map((menu,index)=>(
 
 
-                                <div 
+                                <div
+
                                     className="flavors-card"
+
                                     key={index}
+
                                 >
 
+
+
                                     <h3>
+
                                         🍕 {menu.title}
+
                                     </h3>
 
 
 
+
                                     <h4>
+
                                         Pizzas Salgadas
+
                                     </h4>
+
 
 
                                     <div className="chips">
 
 
-                                    {
-                                        menu.salty.map((item)=>(
-                            
-                                            <span key={item}>
-                                                {item}
-                                            </span>
+                                        {
 
-                                        ))
-                                    }
+                                            menu.salty.map((item)=>(
+
+
+                                                <span
+
+                                                    key={item}
+
+                                                >
+
+                                                    {item}
+
+                                                </span>
+
+
+                                            ))
+
+                                        }
 
 
                                     </div>
+
 
 
 
                                     <h4>
+
                                         🍫 Pizzas Doces
+
                                     </h4>
+
+
 
 
                                     <div className="chips">
 
 
-                                    {
-                                        menu.sweet.map((item)=>(
-                            
-                                        <span key={item}>
-                                                {item}
-                                            </span>
+                                        {
 
-                                        ))
-                                    }
+                                            menu.sweet.map((item)=>(
+
+
+                                                <span
+
+                                                    key={item}
+
+                                                >
+
+                                                    {item}
+
+                                                </span>
+
+
+                                            ))
+
+                                        }
 
 
                                     </div>
+
+
 
 
                                 </div>
 
 
-            ))
+                            ))
 
-        }
-
-
-    </div>
+                        }
 
 
-</div>
+                    </div>
+
+
+                </div>
+
+
 
 
             </div>

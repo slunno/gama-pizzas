@@ -1,17 +1,42 @@
 :root{
 
+
+    /* CORES PRINCIPAIS */
+
     --primary-color:#F28C38;
 
-    --secondary-color:#171B3A;
+    --primary-hover:#ff9f4d;
 
-    --dark-color:#0D1024;
 
-    --light-color:#FFFFFF;
+    --background-dark:#0D1024;
 
-    --text-color:#222222;
+    --background-card:#151A35;
 
-    --whatsapp-color:#25D366;
 
-    --transition:.3s ease;
+    --text-color:#ffffff;
+
+    --text-secondary:#cfcfcf;
+
+
+
+    /* EFEITOS */
+
+    --glass-background:
+    rgba(255,255,255,.06);
+
+
+    --glass-border:
+    rgba(255,255,255,.12);
+
+
+    --shadow-premium:
+    0 20px 50px rgba(0,0,0,.35);
+
+
+
+    /* ANIMAÇÕES */
+
+    --transition:.35s ease;
+
 
 }

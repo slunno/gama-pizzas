@@ -1,5 +1,5 @@
 /* =====================================================
-   RODÍZIOS / CARDÁPIOS PREMIUM - GAMA PIZZA
+   RODÍZIOS PREMIUM - GAMA PIZZA
 ===================================================== */
 
 
@@ -7,11 +7,12 @@
 
     padding:120px 0;
 
-    background:#0f0f0f;
+    background:#10132b;
 
     color:white;
 
 }
+
 
 
 .rodizios-container{
@@ -24,9 +25,9 @@
 
 
 
-/* ===========================
+/* =====================================================
         CABEÇALHO
-=========================== */
+===================================================== */
 
 
 .section-header{
@@ -38,6 +39,7 @@
     text-align:center;
 
 }
+
 
 
 .section-header span,
@@ -56,6 +58,7 @@
 }
 
 
+
 .section-header h2,
 .flavors-header h2{
 
@@ -70,12 +73,13 @@
 }
 
 
+
 .section-header p,
 .flavors-header p{
 
     margin-top:20px;
 
-    color:#cfcfcf;
+    color:#d0d0d0;
 
     font-size:18px;
 
@@ -85,9 +89,9 @@
 
 
 
-/* ===========================
-        GRID DOS CARDS
-=========================== */
+/* =====================================================
+        GRID CARDÁPIOS
+===================================================== */
 
 
 .menu-grid{
@@ -102,32 +106,47 @@
 
 
 
-/* ===========================
-        CARD CARDÁPIO
-=========================== */
+/* =====================================================
+        CARD
+===================================================== */
 
 
 .menu-card{
 
     position:relative;
 
-    background:#171717;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(242,140,56,.10),
+        rgba(20,20,40,.95)
+    );
+
 
     border-radius:22px;
 
     padding:35px 30px;
 
-    border:1px solid rgba(255,255,255,.08);
+
+    border:1px solid rgba(242,140,56,.35);
+
 
     display:flex;
 
     flex-direction:column;
 
+
     transition:.35s ease;
+
 
     overflow:hidden;
 
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.35);
+
 }
+
 
 
 .menu-card::before{
@@ -144,38 +163,94 @@
 
     height:4px;
 
-    background:transparent;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #f28c38,
+
+        transparent
+
+    );
+
+
+    opacity:0;
 
     transition:.35s;
 
 }
 
 
+
 .menu-card:hover{
 
     transform:translateY(-10px);
 
-    border-color:rgba(242,140,56,.5);
+
+    border-color:#f28c38;
+
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.35);
+
+    0 0 15px rgba(242,140,56,.6),
+    0 0 40px rgba(242,140,56,.35);
+
 
 }
+
+
+.menu-card.highlight::before{
+
+    opacity:1;
+
+}
+
 
 
 .menu-card:hover::before{
 
-    background:var(--primary-color);
+    opacity:1;
 
 }
 
+
+
+/* =====================================================
+        DESTAQUE MAIS ESCOLHIDO
+===================================================== */
 
 
 .menu-card.highlight{
 
-    border:2px solid var(--primary-color);
+
+    border:2px solid #f28c38;
+
+
+    box-shadow:
+
+    0 0 20px rgba(242,140,56,.7),
+    0 0 45px rgba(242,140,56,.35);
+
 
 }
+
+
+
+.menu-card.highlight:hover{
+
+    transform:translateY(-15px);
+
+    box-shadow:
+
+    0 30px 70px rgba(242,140,56,.35);
+
+}
+
 
 
 .menu-card.highlight::before{
@@ -186,7 +261,13 @@
 
 
 
+/* =====================================================
+        ETIQUETA
+===================================================== */
+
+
 .badge{
+
 
     position:absolute;
 
@@ -194,27 +275,42 @@
 
     right:20px;
 
-    background:var(--primary-color);
+
+    background:#f28c38;
+
 
     color:#111;
 
-    padding:7px 15px;
+
+    padding:8px 18px;
+
 
     border-radius:50px;
 
+
     font-size:12px;
 
-    font-weight:800;
+
+    font-weight:900;
+
 
     text-transform:uppercase;
+
+
+    box-shadow:
+
+
+    0 0 15px rgba(242,140,56,.8);
+
+
 
 }
 
 
 
-/* ===========================
-        ICONES
-=========================== */
+/* =====================================================
+        ÍCONE
+===================================================== */
 
 
 .menu-icon{
@@ -257,6 +353,11 @@
 
 
 
+/* =====================================================
+        PREÇO
+===================================================== */
+
+
 .price{
 
     color:var(--primary-color);
@@ -276,6 +377,7 @@
 }
 
 
+
 .price small{
 
     font-size:14px;
@@ -288,9 +390,9 @@
 
 
 
-/* ===========================
+/* =====================================================
         INFORMAÇÕES
-=========================== */
+===================================================== */
 
 
 .info{
@@ -298,6 +400,7 @@
     flex:1;
 
 }
+
 
 
 .info p{
@@ -319,17 +422,20 @@
 }
 
 
+
 .info svg{
 
     color:var(--primary-color);
+
+    min-width:16px;
 
 }
 
 
 
-/* ===========================
-        BOTÃO WHATSAPP
-=========================== */
+/* =====================================================
+        BOTÃO
+===================================================== */
 
 
 .menu-button{
@@ -361,6 +467,7 @@
 }
 
 
+
 .menu-button:hover{
 
     transform:translateY(-4px);
@@ -370,7 +477,7 @@
 
 
 /* =====================================================
-        SABORES DOS CARDÁPIOS
+        SABORES
 ===================================================== */
 
 
@@ -408,13 +515,23 @@
 
 .flavors-card{
 
-    background:#171717;
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #181c3a,
+
+        #10132b
+
+    );
 
     padding:40px;
 
     border-radius:22px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(242,140,56,.18);
 
     transition:.35s;
 
@@ -438,8 +555,6 @@
 
     margin-bottom:35px;
 
-    color:white;
-
 }
 
 
@@ -456,9 +571,9 @@
 
 
 
-/* ===========================
-        CHIPS DOS SABORES
-=========================== */
+/* =====================================================
+        SABORES EM CHIPS
+===================================================== */
 
 
 .chips{
@@ -475,7 +590,7 @@
 
 .chips span{
 
-    background:#242424;
+    background:#242848;
 
     color:#ddd;
 
@@ -485,7 +600,7 @@
 
     font-size:14px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(242,140,56,.10);
 
     transition:.3s;
 
@@ -505,9 +620,9 @@
 
 
 
-/* ===========================
+/* =====================================================
         RESPONSIVO
-=========================== */
+===================================================== */
 
 
 @media(max-width:1100px){
@@ -576,68 +691,6 @@
         font-size:36px;
 
     }
-
-  .menu-toggle{
-
-        display:block;
-
-    }
-}
-@media(max-width:768px){
-
-
-.rodizios{
-
-
-    padding:80px 0;
-
-
-}
-
-
-
-.menu-grid{
-
-
-    grid-template-columns:1fr;
-
-
-    gap:25px;
-
-
-}
-
-
-
-.menu-card{
-
-
-    padding:25px;
-
-
-}
-
-
-
-.menu-card h3{
-
-
-    font-size:22px;
-
-
-}
-
-
-
-.menu-button{
-
-
-    width:100%;
-
-    justify-content:center;
-
-
-}
 
 
 }

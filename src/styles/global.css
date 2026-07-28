@@ -1,15 +1,56 @@
-:root{
+/* =================================
+   COMPONENTES PREMIUM
+================================= */
 
-    --primary:#141A33;
-    --orange:#F77E2E;
-    --white:#FFFFFF;
+
+.card-premium{
+
+
+    background:
+
+    var(--glass-background);
+
+
+    border:
+
+    1px solid var(--glass-border);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border-radius:
+
+    25px;
+
+
+    box-shadow:
+
+    var(--shadow-premium);
+
+
+    transition:
+
+    var(--transition);
+
 
 }
 
 
-body{
 
-    background:var(--primary);
-    color:var(--white);
+.card-premium:hover{
+
+
+    transform:
+
+    translateY(-10px);
+
+
+    border-color:
+
+    rgba(242,140,56,.5);
+
 
 }

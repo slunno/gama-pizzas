@@ -7,6 +7,8 @@ import {
 
 import logo from "../../../assets/images/logo.png";
 
+import { buildWhatsAppLink } from "../../../utils/whatsapp";
+
 import "./Footer.css";
 
 
@@ -113,7 +115,9 @@ function Footer(){
 
 
                     <a
-                        href="https://wa.me/5543984483051"
+                        href={buildWhatsAppLink(
+                            "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas."
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
