@@ -1,5 +1,5 @@
 /* =====================================================
-   NAVBAR PREMIUM - GAMA PIZZA
+   NAVBAR PREMIUM - GAMA PIZZAS
 ===================================================== */
 
 
@@ -13,7 +13,7 @@
 
     width:100%;
 
-    z-index:999;
+    z-index:3000;
 
     padding:15px 0;
 
@@ -23,20 +23,13 @@
 
 
 
-/* =====================================================
-        NAVBAR AO ROLAR
-===================================================== */
-
-
 .navbar.scrolled{
 
     background:
 
-    rgba(10,12,25,.90);
+    rgba(10,12,25,.92);
 
-    backdrop-filter:blur(14px);
-
-    -webkit-backdrop-filter:blur(14px);
+    backdrop-filter:blur(15px);
 
     box-shadow:
 
@@ -46,9 +39,7 @@
 
 
 
-/* =====================================================
-        CONTAINER
-===================================================== */
+/* CONTAINER */
 
 
 .navbar-container{
@@ -67,30 +58,14 @@
 
 
 
-/* =====================================================
-        LOGO
-===================================================== */
-
-
-.navbar-logo{
-
-    display:flex;
-
-    align-items:center;
-
-    text-decoration:none;
-
-}
-
+/* LOGO */
 
 
 .navbar-logo img{
 
-    width:105px;
+    width:100px;
 
-    height:auto;
-
-    transition:.3s ease;
+    transition:.3s;
 
 }
 
@@ -104,9 +79,7 @@
 
 
 
-/* =====================================================
-        MENU
-===================================================== */
+/* MENU DESKTOP */
 
 
 .navbar-menu{
@@ -123,31 +96,18 @@
 
 .navbar-menu a{
 
-    position:relative;
+    color:white;
 
     text-decoration:none;
-
-    color:white;
 
     font-size:16px;
 
     font-weight:600;
 
-    transition:.3s;
+    position:relative;
 
 }
 
-
-
-.navbar-menu a:hover{
-
-    color:var(--primary-color);
-
-}
-
-
-
-/* LINHA LARANJA */
 
 
 .navbar-menu a::after{
@@ -180,9 +140,7 @@
 
 
 
-/* =====================================================
-        BOTÃO WHATSAPP
-===================================================== */
+/* BOTÃO WHATSAPP */
 
 
 .navbar-button{
@@ -191,11 +149,7 @@
 
     align-items:center;
 
-    justify-content:center;
-
     gap:10px;
-
-    text-decoration:none;
 
     background:var(--primary-color);
 
@@ -207,169 +161,235 @@
 
     font-weight:700;
 
-    transition:.3s;
-
-    box-shadow:
-
-    0 10px 25px rgba(242,140,56,.25);
+    text-decoration:none;
 
 }
 
 
 
-.navbar-button:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-
-    0 15px 35px rgba(242,140,56,.40);
-
-}
-
-
-
-/* =====================================================
-        MENU MOBILE
-===================================================== */
+/* BOTÃO MOBILE */
 
 
 .navbar-toggle{
 
     display:none;
 
-    border:none;
-
     background:none;
+
+    border:none;
 
     color:white;
 
+    font-size:30px;
+
     cursor:pointer;
 
-    font-size:30px;
+    z-index:3005;
+
+}
+
+
+
+/* FECHAR MENU */
+
+
+.navbar-close{
+
+    display:none;
+
+}
+
+
+
+/* OVERLAY */
+
+
+.navbar-overlay{
+
+    display:none;
 
 }
 
 
 
 /* =====================================================
-        TABLET
+   MOBILE
 ===================================================== */
 
 
 @media(max-width:992px){
 
 
-    .navbar-container{
 
-        width:90%;
+.navbar-container{
 
-    }
+    width:90%;
 
-
-
-    .navbar-logo img{
-
-        width:95px;
-
-    }
+}
 
 
 
-    .navbar-menu{
+.navbar-logo img{
 
-        position:fixed;
+    width:70px;
 
-        top:0;
-
-        right:-100%;
-
-        width:300px;
-
-        height:100vh;
-
-        background:#10132b;
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        align-items:center;
-
-        gap:35px;
-
-        transition:.4s ease;
-
-        box-shadow:
-
-        -10px 0 30px rgba(0,0,0,.40);
-
-    }
+}
 
 
 
-    .navbar-menu.active{
+.navbar-button{
 
-        right:0;
+    display:none;
 
-    }
-
-
-
-    .navbar-menu a{
-
-        font-size:20px;
-
-    }
+}
 
 
 
-    .navbar-button{
+.navbar-toggle{
 
-        display:none;
+    display:flex;
 
-    }
+    align-items:center;
+
+    justify-content:center;
+
+}
 
 
 
-    .navbar-toggle{
+.navbar-menu{
 
-        display:flex;
 
-        align-items:center;
+    position:fixed;
 
-        justify-content:center;
 
-    }
+    top:0;
+
+
+    right:-100%;
+
+
+    width:300px;
+
+
+    max-width:85%;
+
+
+    height:100vh;
+
+
+    background:#10132b;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:35px;
+
+
+    transition:.35s ease;
+
+
+    z-index:3004;
 
 
 }
 
 
 
-/* =====================================================
-        MOBILE
-===================================================== */
+.navbar-menu.active{
+
+    right:0;
+
+}
+
+
+
+.navbar-menu a{
+
+    font-size:22px;
+
+}
+
+
+
+/* BOTÃO X DENTRO DO MENU */
+
+
+.navbar-close{
+
+    display:flex;
+
+    position:absolute;
+
+    top:25px;
+
+    right:25px;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* FUNDO ESCURO */
+
+
+.navbar-overlay{
+
+    display:block;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:3001;
+
+}
+
+
+
+}
+
+
 
 
 @media(max-width:600px){
 
 
-    .navbar-logo img{
+.navbar-logo img{
 
-        width:90px;
+    width:60px;
 
-    }
+}
 
 
+.navbar-menu{
 
-    .navbar-menu{
+    width:100%;
 
-        width:100%;
+    max-width:100%;
 
-    }
+}
 
 
 }

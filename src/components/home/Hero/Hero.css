@@ -87,27 +87,21 @@
 .hero-content{
 
     position:relative;
-
     z-index:3;
 
     width:100%;
-
     max-width:900px;
 
     padding:30px;
+    padding-top: 90px;
 
     text-align:center;
-
     color:white;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
-
     transform:translateY(-60px);
 
 }
@@ -446,7 +440,7 @@
 
     .hero-content{
 
-
+        padding-top: 120px;
         transform:translateY(-10px);
 
 

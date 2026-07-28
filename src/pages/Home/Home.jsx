@@ -12,29 +12,15 @@ function Home(){
     return(
         <div className="home">
 
-            <section id="inicio">
-                <Hero />
-            </section>
+            <Hero />
 
+            <History />
 
-            <section id="historia">
-                <History />
-            </section>
+            <Rodizios />
 
+            <Gallery />
 
-            <section id="rodizios">
-                <Rodizios />
-            </section>
-
-
-            <section id="galeria">
-                <Gallery />
-            </section>
-
-
-            <section id="contato">
-                <Contact />
-            </section>
+            <Contact />
 
         </div>
     );

@@ -14,7 +14,6 @@ import { buildWhatsAppLink } from "../../../utils/whatsapp";
 import "./NavBar.css";
 
 
-
 function Navbar(){
 
 
@@ -27,7 +26,7 @@ function Navbar(){
     useEffect(()=>{
 
 
-        const scroll = ()=>{
+        const handleScroll = ()=>{
 
             setScrolled(window.scrollY > 80);
 
@@ -36,7 +35,7 @@ function Navbar(){
 
         window.addEventListener(
             "scroll",
-            scroll
+            handleScroll
         );
 
 
@@ -44,7 +43,7 @@ function Navbar(){
 
             window.removeEventListener(
                 "scroll",
-                scroll
+                handleScroll
             );
 
         };
@@ -54,8 +53,41 @@ function Navbar(){
 
 
 
+    useEffect(()=>{
 
-    return (
+
+        if(menuOpen){
+
+            document.body.style.overflow="hidden";
+
+        }else{
+
+            document.body.style.overflow="auto";
+
+        }
+
+
+        return ()=>{
+
+            document.body.style.overflow="auto";
+
+        };
+
+
+    },[menuOpen]);
+
+
+
+    const closeMenu = ()=>{
+
+        setMenuOpen(false);
+
+    };
+
+
+
+    return(
+
 
         <header
             className={`navbar ${
@@ -70,6 +102,7 @@ function Navbar(){
                 <a
                     href="#inicio"
                     className="navbar-logo"
+                    onClick={closeMenu}
                 >
 
                     <img
@@ -88,39 +121,86 @@ function Navbar(){
                 >
 
 
-                    <a href="#inicio">
+                    <button
+                        className="navbar-close"
+                        onClick={closeMenu}
+                    >
+
+                        <FaTimes/>
+
+                    </button>
+
+
+
+                    <a
+                        href="#inicio"
+                        onClick={closeMenu}
+                    >
                         Início
                     </a>
 
 
-                    <a href="#historia">
+
+                    <a
+                        href="#historia"
+                        onClick={closeMenu}
+                    >
                         História
                     </a>
 
 
-                    <a href="#rodizios">
+
+                    <a
+                        href="#rodizios"
+                        onClick={closeMenu}
+                    >
                         Rodízios
                     </a>
 
 
-                    <a href="#galeria">
+
+                    <a
+                        href="#galeria"
+                        onClick={closeMenu}
+                    >
                         Galeria
                     </a>
 
 
-                    <a href="#contato">
+
+                    <a
+                        href="#contato"
+                        onClick={closeMenu}
+                    >
                         Contato
                     </a>
+
 
 
                 </nav>
 
 
 
+                {
+                    menuOpen && (
+
+                        <div
+                            className="navbar-overlay"
+                            onClick={closeMenu}
+                        />
+
+                    )
+
+                }
+
+
+
                 <a
-                    href={buildWhatsAppLink(
+                    href={
+                        buildWhatsAppLink(
                         "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas."
-                    )}
+                        )
+                    }
                     target="_blank"
                     rel="noreferrer"
                     className="navbar-button"
@@ -136,11 +216,8 @@ function Navbar(){
 
 
                 <button
-
                     className="navbar-toggle"
-
                     onClick={()=>setMenuOpen(!menuOpen)}
-
                 >
 
                     {
@@ -155,10 +232,13 @@ function Navbar(){
                 </button>
 
 
+
             </div>
 
 
+
         </header>
+
 
     );
 
