@@ -25,7 +25,13 @@ function Contact(){
             <div className="contact-container">
 
 
-                <div className="contact-content">
+                <div
+
+                    className="contact-content"
+
+                    data-aos="fade-right"
+
+                >
 
 
                     <span>
@@ -93,7 +99,8 @@ function Contact(){
 
 
 
-                <div className="contact-info">
+                <div className="contact-info"
+                     data-aos="fade-left">
 
 
 

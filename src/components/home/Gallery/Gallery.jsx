@@ -95,8 +95,15 @@ function Gallery(){
 
 
                             <div
+
                                 className="gallery-item"
+
                                 key={index}
+
+                                data-aos="zoom-in"
+
+                                data-aos-delay={index * 100}
+
                             >
 
 

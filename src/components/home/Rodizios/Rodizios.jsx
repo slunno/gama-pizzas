@@ -114,6 +114,8 @@ function Rodizios() {
                                     : ""
                                 }`}
                                 key={index}
+                                data-aos="fade-up"
+                                data-aos-delay={index * 100}
                             >
 
                                 {

@@ -15,147 +15,171 @@ import pizzaImg from "../../../assets/images/pizza-background.png";
 function History(){
 
 
-    const highlights=[
+const highlights=[
 
-        {
-            icon:<FaPizzaSlice/>,
-            title:"Pizza Artesanal",
-            text:"Massas e sabores preparados com cuidado."
-        },
+{
+icon:<FaPizzaSlice/>,
+title:"Pizza Artesanal",
+text:"Massas e sabores preparados com cuidado."
+},
 
 
-        {
-            icon:<FaFire/>,
-            title:"Preparação na Hora",
-            text:"Levamos estrutura completa para seu evento."
-        },
+{
+icon:<FaFire/>,
+title:"Preparação na Hora",
+text:"Levamos estrutura completa para seu evento."
+},
 
 
-        {
-            icon:<FaUsers/>,
-            title:"Momentos Especiais",
-            text:"Transformamos festas em experiências."
-        }
+{
+icon:<FaUsers/>,
+title:"Momentos Especiais",
+text:"Transformamos festas em experiências."
+}
 
-    ];
+];
 
 
 
-    return(
+return(
 
 
-        <section 
-            className="history"
-            id="historia"
-        >
+<section 
+className="history"
+id="historia"
+>
 
 
-            <div className="history-container">
+<div className="history-container">
 
 
-                <div className="history-image">
+<div
 
+className="history-image"
 
-                    <img 
-                        src={pizzaImg}
-                        alt="Pizza Gama"
-                    />
+data-aos="fade-right"
 
+>
 
-                </div>
 
+<img
 
+src={pizzaImg}
 
-                <div className="history-content">
+alt="Gama Pizzas"
 
+/>
 
-                    <span>
-                        Nossa História
-                    </span>
 
+</div>
 
-                    <h2>
-                        Mais que pizzas,
-                        criamos momentos
-                    </h2>
 
 
 
-                    <p>
+<div
 
-                        A Gama Pizzas nasceu com o propósito
-                        de levar uma experiência completa de
-                        rodízio até eventos especiais.
+className="history-content"
 
-                    </p>
+data-aos="fade-left"
 
+>
 
-                    <p>
 
-                        Trabalhamos com ingredientes selecionados,
-                        equipe preparada e estrutura própria para
-                        transformar cada evento em uma lembrança
-                        inesquecível.
+<span>
+Nossa História
+</span>
 
-                    </p>
 
 
+<h2>
+Mais que pizzas,
+criamos momentos
+</h2>
 
-                    <div className="history-highlights">
 
 
-                    {
+<p>
+A Gama Pizzas nasceu com o propósito
+de levar uma experiência completa de
+rodízio até eventos especiais.
+</p>
 
-                        highlights.map((item,index)=>(
 
+<p>
+Trabalhamos com ingredientes selecionados,
+equipe preparada e estrutura própria.
+</p>
 
-                            <div 
-                                className="history-card"
-                                key={index}
-                            >
 
-                                <div className="history-icon">
 
-                                    {item.icon}
 
-                                </div>
+<div className="history-highlights">
 
 
-                                <div>
+{
 
-                                    <h3>
-                                        {item.title}
-                                    </h3>
+highlights.map((item,index)=>(
 
-                                    <p>
-                                        {item.text}
-                                    </p>
 
-                                </div>
+<div
 
+className="history-card"
 
-                            </div>
+key={index}
 
+data-aos="fade-up"
 
-                        ))
+data-aos-delay={index * 100}
 
-                    }
+>
 
 
-                    </div>
+<div className="history-icon">
 
+{item.icon}
 
+</div>
 
-                </div>
 
 
-            </div>
+<div>
 
+<h3>
+{item.title}
+</h3>
 
-        </section>
 
+<p>
+{item.text}
+</p>
 
-    );
+
+</div>
+
+
+</div>
+
+
+))
+
+
+}
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+);
+
 
 }
 
