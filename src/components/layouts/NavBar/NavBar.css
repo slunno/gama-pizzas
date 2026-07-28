@@ -193,11 +193,7 @@
 /* FECHAR MENU */
 
 
-.navbar-close{
 
-    display:none;
-
-}
 
 
 
@@ -322,32 +318,6 @@
 
 
 
-/* BOTÃO X DENTRO DO MENU */
-
-
-.navbar-close{
-
-    display:flex;
-
-    position:absolute;
-
-    top:25px;
-
-    right:25px;
-
-    background:none;
-
-    border:none;
-
-    color:white;
-
-    font-size:30px;
-
-    cursor:pointer;
-
-}
-
-
 
 /* FUNDO ESCURO */
 
@@ -378,7 +348,7 @@
 
 .navbar-logo img{
 
-    width:60px;
+    width:70px;
 
 }
 

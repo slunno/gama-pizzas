@@ -16,7 +16,6 @@ import "./NavBar.css";
 
 function Navbar(){
 
-
     const [menuOpen,setMenuOpen] = useState(false);
 
     const [scrolled,setScrolled] = useState(false);
@@ -56,15 +55,12 @@ function Navbar(){
     useEffect(()=>{
 
 
-        if(menuOpen){
-
-            document.body.style.overflow="hidden";
-
-        }else{
-
-            document.body.style.overflow="auto";
-
-        }
+        document.body.style.overflow =
+        menuOpen
+        ?
+        "hidden"
+        :
+        "auto";
 
 
         return ()=>{
@@ -87,7 +83,6 @@ function Navbar(){
 
 
     return(
-
 
         <header
             className={`navbar ${
@@ -114,22 +109,12 @@ function Navbar(){
 
 
 
+
                 <nav
                     className={`navbar-menu ${
                         menuOpen ? "active" : ""
                     }`}
                 >
-
-
-                    <button
-                        className="navbar-close"
-                        onClick={closeMenu}
-                    >
-
-                        <FaTimes/>
-
-                    </button>
-
 
 
                     <a
@@ -140,14 +125,12 @@ function Navbar(){
                     </a>
 
 
-
                     <a
                         href="#historia"
                         onClick={closeMenu}
                     >
                         História
                     </a>
-
 
 
                     <a
@@ -158,7 +141,6 @@ function Navbar(){
                     </a>
 
 
-
                     <a
                         href="#galeria"
                         onClick={closeMenu}
@@ -167,14 +149,12 @@ function Navbar(){
                     </a>
 
 
-
                     <a
                         href="#contato"
                         onClick={closeMenu}
                     >
                         Contato
                     </a>
-
 
 
                 </nav>
@@ -190,17 +170,15 @@ function Navbar(){
                         />
 
                     )
-
                 }
 
 
 
+
                 <a
-                    href={
-                        buildWhatsAppLink(
+                    href={buildWhatsAppLink(
                         "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas."
-                        )
-                    }
+                    )}
                     target="_blank"
                     rel="noreferrer"
                     className="navbar-button"
@@ -215,9 +193,11 @@ function Navbar(){
 
 
 
+
                 <button
                     className="navbar-toggle"
                     onClick={()=>setMenuOpen(!menuOpen)}
+                    aria-label="Abrir menu"
                 >
 
                     {
@@ -236,9 +216,7 @@ function Navbar(){
             </div>
 
 
-
         </header>
-
 
     );
 
