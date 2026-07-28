@@ -11,7 +11,7 @@ import logo from "../../../assets/images/logo.png";
 
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
 
-import "./Navbar.css";
+import "./NavBar.css";
 
 
 

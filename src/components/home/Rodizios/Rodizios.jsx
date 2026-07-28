@@ -1,4 +1,4 @@
-import { flavors } from "../../../data/flavorsData";
+import { flavors } from "../../../data/FlavorsData";
 
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
 
