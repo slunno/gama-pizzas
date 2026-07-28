@@ -583,3 +583,61 @@
 
     }
 }
+@media(max-width:768px){
+
+
+.rodizios{
+
+
+    padding:80px 0;
+
+
+}
+
+
+
+.menu-grid{
+
+
+    grid-template-columns:1fr;
+
+
+    gap:25px;
+
+
+}
+
+
+
+.menu-card{
+
+
+    padding:25px;
+
+
+}
+
+
+
+.menu-card h3{
+
+
+    font-size:22px;
+
+
+}
+
+
+
+.menu-button{
+
+
+    width:100%;
+
+    justify-content:center;
+
+
+}
+
+
+}

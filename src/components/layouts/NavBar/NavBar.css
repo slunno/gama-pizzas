@@ -336,3 +336,46 @@
 
 
 }
+@media(max-width:768px){
+
+
+.navbar{
+
+
+    padding:8px 0;
+
+
+}
+
+
+
+.navbar-container{
+
+
+    width:90%;
+
+
+}
+
+
+
+.navbar-logo img{
+
+
+    width:70px;
+
+
+}
+
+
+
+.navbar-menu a{
+
+
+    font-size:18px;
+
+
+}
+
+
+}

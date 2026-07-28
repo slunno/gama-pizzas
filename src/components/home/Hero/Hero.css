@@ -330,3 +330,90 @@
 
 
 }
+/* ==========================
+        MOBILE PREMIUM
+========================== */
+
+
+@media(max-width:768px){
+
+
+.hero{
+
+
+    height:auto;
+
+    min-height:100vh;
+
+
+}
+
+
+
+.hero-content{
+
+
+    padding:20px;
+
+    transform:translateY(10px);
+
+
+}
+
+
+
+.hero-logo{
+
+
+    width:140px;
+
+
+}
+
+
+
+.hero-content h1{
+
+
+    font-size:42px;
+
+    line-height:1.15;
+
+
+}
+
+
+
+.hero-content p{
+
+
+    font-size:16px;
+
+}
+
+
+
+.hero-actions{
+
+
+    flex-direction:column;
+
+    width:100%;
+
+
+}
+
+
+
+.hero-button{
+
+
+    width:100%;
+
+    padding:15px;
+
+
+}
+
+
+}

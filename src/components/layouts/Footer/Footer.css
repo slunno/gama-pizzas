@@ -338,3 +338,58 @@
 
 
 }
+@media(max-width:768px){
+
+
+.footer{
+
+
+    padding-top:60px;
+
+
+}
+
+
+
+.footer-container{
+
+
+    width:90%;
+
+
+}
+
+
+
+.footer-brand img{
+
+
+    width:100px;
+
+
+}
+
+
+
+.footer-links,
+.footer-contact,
+.footer-social{
+
+
+    align-items:center;
+
+
+}
+
+
+
+.footer h3{
+
+
+    margin-top:25px;
+
+
+}
+
+
+}

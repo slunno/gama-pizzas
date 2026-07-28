@@ -198,3 +198,69 @@
 
 
 }
+
+@media(max-width:768px){
+
+
+.history{
+
+
+    padding:80px 0;
+
+
+}
+
+
+
+.history-container{
+
+
+    width:90%;
+
+    gap:40px;
+
+
+}
+
+
+
+.history-image img{
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+.history-content{
+
+
+    text-align:center;
+
+
+}
+
+
+
+.history-card{
+
+
+    text-align:left;
+
+
+}
+
+
+
+.history-icon{
+
+
+    min-width:50px;
+
+
+}
+
+
+}

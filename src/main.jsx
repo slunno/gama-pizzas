@@ -10,6 +10,8 @@ import App from "./App.jsx";
 
 import "./styles/global.css";
 
+import "./styles/responsive.css";
+
 
 AOS.init({
 
