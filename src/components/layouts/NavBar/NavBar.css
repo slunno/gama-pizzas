@@ -1,27 +1,44 @@
+/* =====================================================
+   NAVBAR PREMIUM - GAMA PIZZA
+===================================================== */
+
 .navbar{
 
     position:fixed;
+
     top:0;
+
     left:0;
 
     width:100%;
 
-    z-index:1000;
+    z-index:999;
 
-    background:rgba(0,0,0,0.75);
+    transition:.35s ease;
 
-    backdrop-filter:blur(10px);
+    padding:18px 0;
 
 }
 
+.navbar.scrolled{
+
+    background:rgba(15,15,15,.88);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.30);
+
+    padding:12px 0;
+
+}
 
 .navbar-container{
 
-    max-width:1200px;
+    width:min(92%,1280px);
 
     margin:auto;
-
-    padding:20px;
 
     display:flex;
 
@@ -31,42 +48,248 @@
 
 }
 
+/* ===========================
+            LOGO
+=========================== */
 
 .navbar-logo{
 
-    font-size:28px;
+    display:flex;
 
-    font-weight:700;
+    align-items:center;
 
-    color:white;
+    text-decoration:none;
 
 }
 
+.navbar-logo img{
+
+    width:170px;
+
+    transition:.30s;
+
+}
+
+.navbar-logo:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/* ===========================
+            MENU
+=========================== */
 
 .navbar-menu{
 
     display:flex;
 
-    gap:25px;
+    align-items:center;
+
+    gap:35px;
 
 }
-
 
 .navbar-menu a{
 
-    color:white;
+    position:relative;
 
     text-decoration:none;
 
+    color:#fff;
+
     font-size:16px;
 
-    transition:.3s;
+    font-weight:600;
+
+    transition:.30s;
 
 }
 
-
 .navbar-menu a:hover{
 
-    color:#f7b733;
+    color:var(--primary-color);
+
+}
+
+.navbar-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary-color);
+
+    transition:.30s;
+
+}
+
+.navbar-menu a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+            BOTÃO
+=========================== */
+
+.navbar-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    background:var(--primary-color);
+
+    color:#111;
+
+    padding:14px 26px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.30s;
+
+    box-shadow:0 10px 25px rgba(242,140,56,.30);
+
+}
+
+.navbar-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 16px 35px rgba(242,140,56,.40);
+
+}
+
+/* ===========================
+        MENU MOBILE
+=========================== */
+
+.navbar-toggle{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:30px;
+
+}
+
+/* ===========================
+        TABLET
+=========================== */
+
+@media(max-width:992px){
+
+    .navbar{
+
+        padding:14px 0;
+
+    }
+
+    .navbar-logo img{
+
+        width:145px;
+
+    }
+
+    .navbar-menu{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:300px;
+
+        height:100vh;
+
+        background:#111;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:35px;
+
+        transition:.40s ease;
+
+        box-shadow:-8px 0 30px rgba(0,0,0,.35);
+
+    }
+
+    .navbar-menu.active{
+
+        right:0;
+
+    }
+
+    .navbar-menu a{
+
+        font-size:20px;
+
+    }
+
+    .navbar-button{
+
+        display:none;
+
+    }
+
+    .navbar-toggle{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ===========================
+            MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+    .navbar-logo img{
+
+        width:125px;
+
+    }
+
+    .navbar-menu{
+
+        width:100%;
+
+    }
 
 }

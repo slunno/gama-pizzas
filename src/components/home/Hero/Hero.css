@@ -20,11 +20,10 @@
 
 .hero-logo{
 
-    width:260px;
+    width:280px;
 
-    margin:0 auto 30px;
-
-    animation:fadeUp .8s ease;
+    filter:
+        drop-shadow(0 15px 35px rgba(0,0,0,.45));
 
 }
 
@@ -42,7 +41,9 @@
 
     background-position:center;
 
-    transform:scale(1.05);
+    transform:scale(1.08);
+
+    animation:zoomHero 18s ease-in-out infinite alternate;
 
 }
 
@@ -50,11 +51,17 @@
 
 .hero-overlay{
 
+    position:absolute;
+
+    inset:0;
+
     background:
     linear-gradient(
-        rgba(13,16,36,.80),
-        rgba(13,16,36,.90)
+        rgba(10,10,10,.70),
+        rgba(10,10,10,.88)
     );
+
+    z-index:1;
 
 }
 
@@ -90,21 +97,18 @@
 
 .hero-content h1{
 
-
-    font-size:68px;
-
+    font-size:72px;
 
     line-height:1.1;
 
-
     font-weight:800;
-
 
     margin-bottom:25px;
 
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.45);
 
 }
-
 
 
 .hero-content p{
@@ -190,12 +194,12 @@
 
 .hero-button.primary{
 
-
     background:var(--primary-color);
-
 
     color:#111;
 
+    box-shadow:
+        0 12px 30px rgba(255,110,0,.35);
 
 }
 
@@ -216,12 +220,12 @@
 
 .hero-button:hover{
 
+    transform:translateY(-6px);
 
-    transform:translateY(-5px);
-
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
 
 }
-
 
 
 /* TABLET */
@@ -275,5 +279,21 @@
 
     }
 
+
+}
+
+@keyframes zoomHero{
+
+    from{
+
+        transform:scale(1.05);
+
+    }
+
+    to{
+
+        transform:scale(1.12);
+
+    }
 
 }
