@@ -23,6 +23,7 @@
 }
 
 
+
 /* ===========================
         CABEÇALHO
 =========================== */
@@ -39,7 +40,8 @@
 }
 
 
-.section-header span{
+.section-header span,
+.flavors-header span{
 
     color:var(--primary-color);
 
@@ -54,7 +56,8 @@
 }
 
 
-.section-header h2{
+.section-header h2,
+.flavors-header h2{
 
     margin-top:15px;
 
@@ -67,7 +70,8 @@
 }
 
 
-.section-header p{
+.section-header p,
+.flavors-header p{
 
     margin-top:20px;
 
@@ -99,7 +103,7 @@
 
 
 /* ===========================
-        CARD
+        CARD CARDÁPIO
 =========================== */
 
 
@@ -126,7 +130,6 @@
 }
 
 
-
 .menu-card::before{
 
     content:"";
@@ -148,7 +151,6 @@
 }
 
 
-
 .menu-card:hover{
 
     transform:translateY(-10px);
@@ -161,7 +163,6 @@
 }
 
 
-
 .menu-card:hover::before{
 
     background:var(--primary-color);
@@ -170,17 +171,11 @@
 
 
 
-/* ===========================
-        CARD DESTAQUE
-=========================== */
-
-
 .menu-card.highlight{
 
     border:2px solid var(--primary-color);
 
 }
-
 
 
 .menu-card.highlight::before{
@@ -218,7 +213,7 @@
 
 
 /* ===========================
-        ÍCONE
+        ICONES
 =========================== */
 
 
@@ -246,27 +241,6 @@
 
 }
 
-
-
-.menu-icon svg{
-
-    transition:.3s;
-
-}
-
-
-
-.menu-card:hover .menu-icon svg{
-
-    transform:rotate(-10deg) scale(1.1);
-
-}
-
-
-
-/* ===========================
-        TEXTO
-=========================== */
 
 
 .menu-card h3{
@@ -302,14 +276,11 @@
 }
 
 
-
 .price small{
 
     font-size:14px;
 
     color:#aaa;
-
-    font-weight:500;
 
     margin-bottom:8px;
 
@@ -327,7 +298,6 @@
     flex:1;
 
 }
-
 
 
 .info p{
@@ -349,21 +319,16 @@
 }
 
 
-
 .info svg{
 
     color:var(--primary-color);
-
-    margin-top:5px;
-
-    min-width:16px;
 
 }
 
 
 
 /* ===========================
-        BOTÃO
+        BOTÃO WHATSAPP
 =========================== */
 
 
@@ -396,21 +361,152 @@
 }
 
 
-
 .menu-button:hover{
 
     transform:translateY(-4px);
 
-    box-shadow:
+}
 
-    0 12px 25px rgba(37,211,102,.35);
+
+
+/* =====================================================
+        SABORES DOS CARDÁPIOS
+===================================================== */
+
+
+.flavors-section{
+
+    margin-top:120px;
+
+}
+
+
+
+.flavors-header{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:0 auto 50px;
+
+}
+
+
+
+.flavors-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.flavors-card{
+
+    background:#171717;
+
+    padding:40px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+
+
+.flavors-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary-color);
+
+}
+
+
+
+.flavors-card h3{
+
+    font-size:28px;
+
+    margin-bottom:35px;
+
+    color:white;
+
+}
+
+
+
+.flavors-card h4{
+
+    color:var(--primary-color);
+
+    font-size:20px;
+
+    margin:30px 0 18px;
 
 }
 
 
 
 /* ===========================
-        TABLET
+        CHIPS DOS SABORES
+=========================== */
+
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+
+.chips span{
+
+    background:#242424;
+
+    color:#ddd;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.chips span:hover{
+
+    background:var(--primary-color);
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* ===========================
+        RESPONSIVO
 =========================== */
 
 
@@ -428,12 +524,37 @@
 
 
 
-/* ===========================
-        MOBILE
-=========================== */
+@media(max-width:800px){
 
 
-@media(max-width:700px){
+    .menu-grid,
+    .flavors-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .section-header h2,
+    .flavors-header h2{
+
+        font-size:34px;
+
+    }
+
+
+    .flavors-card{
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
 
 
     .rodizios{
@@ -443,20 +564,22 @@
     }
 
 
-    .section-header h2{
+    .menu-card{
 
-        font-size:32px;
+        padding:25px;
 
     }
 
 
-    .section-header p{
-        font-size:16px;
+    .price{
+
+        font-size:36px;
+
     }
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-    .menu-card h3{
-        min-height:auto;
+
+  .menu-toggle{
+
+        display:block;
+
     }
 }

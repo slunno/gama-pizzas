@@ -1,6 +1,7 @@
 import { FaWhatsapp, FaPizzaSlice } from "react-icons/fa";
 
 import logo from "../../../assets/images/logo.png";
+import background from "../../../assets/images/pizza-background.png";
 
 import "./Hero.css";
 
@@ -8,36 +9,47 @@ import "./Hero.css";
 function Hero() {
 
 
-    const whatsappNumber = "5543999999999";
+    const whatsappNumber = "5543984483051";
 
 
     const message = encodeURIComponent(
-        "Olá! Gostaria de conhecer o rodízio da Gama Pizza."
+        "Olá! Gostaria de conhecer o rodízio da Gama Pizzas."
     );
 
 
     return (
 
-        <section className="hero">
+        <section 
+            className="hero"
+            id="inicio"
+        >
 
-            
-            <div className="hero-background"></div>
+            <div
+                className="hero-background"
+                style={{
+                    backgroundImage:`url(${background})`
+                }}
+            />
 
 
             <div className="hero-overlay"></div>
 
 
+
             <div className="hero-content">
 
-                <img 
-                  src={logo}
-                  alt="Gama Pizza"
-                  className="hero-logo"
+
+                <img
+                    src={logo}
+                    alt="Gama Pizzas"
+                    className="hero-logo"
                 />
-                
+
+
+
                 <div className="hero-badge">
 
-                    <FaPizzaSlice />
+                    <FaPizzaSlice/>
 
                     <span>
                         Rodízio de Pizzas
@@ -47,11 +59,11 @@ function Hero() {
 
 
 
+
                 <h1>
 
                     O sabor que reúne
-                    <br />
-
+                    <br/>
                     família e amigos
 
                 </h1>
@@ -60,11 +72,12 @@ function Hero() {
 
                 <p>
 
-                    Uma experiência completa com
-                    pizzas artesanais, ambiente agradável
-                    e sabores para todos os momentos.
+                    Levamos a experiência da Gama Pizzas
+                    até o seu evento com pizzas artesanais,
+                    estrutura completa e sabores incríveis.
 
                 </p>
+
 
 
 
@@ -82,6 +95,7 @@ function Hero() {
 
 
 
+
                     <a
                         href={`https://wa.me/${whatsappNumber}?text=${message}`}
                         target="_blank"
@@ -89,7 +103,7 @@ function Hero() {
                         className="hero-button whatsapp"
                     >
 
-                        <FaWhatsapp />
+                        <FaWhatsapp/>
 
                         WhatsApp
 

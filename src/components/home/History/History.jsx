@@ -1,81 +1,163 @@
-import "./History.css";
-import historyImage from "../../../assets/images/history.jpg";
-import { FaPizzaSlice, FaUsers, FaHeart } from "react-icons/fa";
+import {
+    FaPizzaSlice,
+    FaFire,
+    FaUsers
+} from "react-icons/fa";
 
-function History() {
-    return (
-        <section className="history" id="historia">
+
+import "./History.css";
+
+
+import pizzaImg from "../../../assets/images/pizza-background.png";
+
+
+
+function History(){
+
+
+    const highlights=[
+
+        {
+            icon:<FaPizzaSlice/>,
+            title:"Pizza Artesanal",
+            text:"Massas e sabores preparados com cuidado."
+        },
+
+
+        {
+            icon:<FaFire/>,
+            title:"Preparação na Hora",
+            text:"Levamos estrutura completa para seu evento."
+        },
+
+
+        {
+            icon:<FaUsers/>,
+            title:"Momentos Especiais",
+            text:"Transformamos festas em experiências."
+        }
+
+    ];
+
+
+
+    return(
+
+
+        <section 
+            className="history"
+            id="historia"
+        >
+
 
             <div className="history-container">
 
+
                 <div className="history-image">
 
-                    <img
-                        src={historyImage}
-                        alt="Gama Pizza"
+
+                    <img 
+                        src={pizzaImg}
+                        alt="Pizza Gama"
                     />
 
+
                 </div>
+
+
 
                 <div className="history-content">
 
-                    <span className="section-tag">
+
+                    <span>
                         Nossa História
                     </span>
 
+
                     <h2>
-                        Tradição, sabor e momentos inesquecíveis.
+                        Mais que pizzas,
+                        criamos momentos
                     </h2>
 
-                    <p>
-                        A Gama Pizza nasceu com um propósito simples:
-                        proporcionar uma experiência completa para quem ama
-                        uma boa pizza. Com ingredientes selecionados,
-                        atendimento acolhedor e um ambiente familiar,
-                        conquistamos clientes que hoje fazem parte da nossa história.
-                    </p>
+
 
                     <p>
-                        Nosso rodízio reúne pizzas salgadas, doces,
-                        massas e diversas opções preparadas diariamente,
-                        sempre buscando qualidade em cada detalhe.
+
+                        A Gama Pizzas nasceu com o propósito
+                        de levar uma experiência completa de
+                        rodízio até eventos especiais.
+
                     </p>
 
-                    <div className="history-cards">
 
-                        <div className="history-card">
-                            <FaPizzaSlice />
-                            <h3>Receitas Exclusivas</h3>
-                            <p>Sabores preparados com ingredientes selecionados.</p>
-                        </div>
+                    <p>
 
-                        <div className="history-card">
-                            <FaUsers />
-                            <h3>Ambiente Familiar</h3>
-                            <p>Um espaço perfeito para reunir amigos e família.</p>
-                        </div>
+                        Trabalhamos com ingredientes selecionados,
+                        equipe preparada e estrutura própria para
+                        transformar cada evento em uma lembrança
+                        inesquecível.
 
-                        <div className="history-card">
-                            <FaHeart />
-                            <h3>Feito com Paixão</h3>
-                            <p>Cada pizza é preparada com dedicação e carinho.</p>
-                        </div>
+                    </p>
+
+
+
+                    <div className="history-highlights">
+
+
+                    {
+
+                        highlights.map((item,index)=>(
+
+
+                            <div 
+                                className="history-card"
+                                key={index}
+                            >
+
+                                <div className="history-icon">
+
+                                    {item.icon}
+
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        {item.title}
+                                    </h3>
+
+                                    <p>
+                                        {item.text}
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                        ))
+
+                    }
+
 
                     </div>
 
-                    <a
-                        href="#rodizios"
-                        className="history-button"
-                    >
-                        Conheça nossos Rodízios
-                    </a>
+
 
                 </div>
 
+
             </div>
 
+
         </section>
+
+
     );
+
 }
+
 
 export default History;

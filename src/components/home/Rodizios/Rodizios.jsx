@@ -1,4 +1,5 @@
 import "./Rodizios.css";
+import { flavors } from "../../../data/flavorsData";
 
 import {
     FaPizzaSlice,
@@ -62,6 +63,7 @@ const menus = [
     }
 
 ];
+
 
 
 function Rodizios() {
@@ -208,6 +210,103 @@ function Rodizios() {
 
 
                 </div>
+                <div className="flavors-section">
+
+
+                    <div className="flavors-header">
+
+                        <span>
+                            Sabores disponíveis
+                        </span>
+
+                        <h2>
+                            Conheça nossos sabores
+                        </h2>
+
+                        <p>
+                            Trabalhamos com opções salgadas e doces
+                            para deixar seu evento completo.
+                        </p>
+
+                    </div>
+
+
+
+                    <div className="flavors-grid">
+
+
+                        {
+                            Object.values(flavors).map((menu,index)=>(
+
+
+                                <div 
+                                    className="flavors-card"
+                                    key={index}
+                                >
+
+                                    <h3>
+                                        🍕 {menu.title}
+                                    </h3>
+
+
+
+                                    <h4>
+                                        Pizzas Salgadas
+                                    </h4>
+
+
+                                    <div className="chips">
+
+
+                                    {
+                                        menu.salty.map((item)=>(
+                            
+                                            <span key={item}>
+                                                {item}
+                                            </span>
+
+                                        ))
+                                    }
+
+
+                                    </div>
+
+
+
+                                    <h4>
+                                        🍫 Pizzas Doces
+                                    </h4>
+
+
+                                    <div className="chips">
+
+
+                                    {
+                                        menu.sweet.map((item)=>(
+                            
+                                        <span key={item}>
+                                                {item}
+                                            </span>
+
+                                        ))
+                                    }
+
+
+                                    </div>
+
+
+                                </div>
+
+
+            ))
+
+        }
+
+
+    </div>
+
+
+</div>
 
 
             </div>

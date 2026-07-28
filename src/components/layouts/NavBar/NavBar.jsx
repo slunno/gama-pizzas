@@ -1,99 +1,164 @@
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 
-import "./Navbar.css";
+import {
+    FaBars,
+    FaTimes,
+    FaWhatsapp
+} from "react-icons/fa";
+
 
 import logo from "../../../assets/images/logo.png";
 
-function Navbar() {
+import "./Navbar.css";
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
 
-        const handleScroll = () => {
+function Navbar(){
+
+
+    const [menuOpen,setMenuOpen] = useState(false);
+
+    const [scrolled,setScrolled] = useState(false);
+
+
+
+    useEffect(()=>{
+
+
+        const scroll = ()=>{
 
             setScrolled(window.scrollY > 80);
 
         };
 
-        window.addEventListener("scroll", handleScroll);
 
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener(
+            "scroll",
+            scroll
+        );
 
-    }, []);
 
-    const closeMenu = () => setMenuOpen(false);
+        return ()=>{
+
+            window.removeEventListener(
+                "scroll",
+                scroll
+            );
+
+        };
+
+
+    },[]);
+
+
+
 
     return (
 
-        <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <header
+            className={`navbar ${
+                scrolled ? "scrolled" : ""
+            }`}
+        >
+
 
             <div className="navbar-container">
 
-                <a href="#inicio" className="navbar-logo">
+
+                <a
+                    href="#inicio"
+                    className="navbar-logo"
+                >
 
                     <img
                         src={logo}
-                        alt="Gama Pizza"
+                        alt="Gama Pizzas"
                     />
 
                 </a>
 
-                <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
 
-                    <a href="#inicio" onClick={closeMenu}>
+
+                <nav
+                    className={`navbar-menu ${
+                        menuOpen ? "active" : ""
+                    }`}
+                >
+
+
+                    <a href="#inicio">
                         Início
                     </a>
 
-                    <a href="#historia" onClick={closeMenu}>
+
+                    <a href="#historia">
                         História
                     </a>
 
-                    <a href="#rodizios" onClick={closeMenu}>
+
+                    <a href="#rodizios">
                         Rodízios
                     </a>
 
-                    <a href="#galeria" onClick={closeMenu}>
+
+                    <a href="#galeria">
                         Galeria
                     </a>
 
-                    <a href="#contato" onClick={closeMenu}>
+
+                    <a href="#contato">
                         Contato
                     </a>
 
+
                 </nav>
+
+
 
                 <a
                     href="https://wa.me/5543984483051"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noreferrer"
                     className="navbar-button"
                 >
 
-                    <FaWhatsapp />
+                    <FaWhatsapp/>
 
-                    Reservar Mesa
+                    Orçamento
 
                 </a>
 
+
+
+
                 <button
+
                     className="navbar-toggle"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Abrir Menu"
+
+                    onClick={()=>setMenuOpen(!menuOpen)}
+
                 >
 
-                    {menuOpen ? <FaTimes /> : <FaBars />}
+                    {
+                        menuOpen
+                        ?
+                        <FaTimes/>
+                        :
+                        <FaBars/>
+                    }
+
 
                 </button>
 
+
             </div>
+
 
         </header>
 
     );
 
 }
+
 
 export default Navbar;
