@@ -1,36 +1,340 @@
 .footer{
 
-    background:#111;
+
+    background:#080a18;
 
     color:white;
 
-    padding:40px 20px;
+    padding-top:80px;
+
 
 }
+
 
 
 .footer-container{
 
-    max-width:1200px;
+
+    width:min(90%,1200px);
 
     margin:auto;
 
+
+    display:grid;
+
+    grid-template-columns:
+
+    1.4fr 1fr 1fr .8fr;
+
+
+    gap:50px;
+
+
+}
+
+
+
+
+/* MARCA */
+
+
+.footer-brand img{
+
+
+    width:120px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.footer-brand p{
+
+
+    color:#bbb;
+
+    line-height:1.7;
+
+    max-width:280px;
+
+
+}
+
+
+
+
+/* TITULOS */
+
+
+.footer h3{
+
+
+    color:var(--primary-color);
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+/* LINKS */
+
+
+.footer-links{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+
+}
+
+
+
+.footer-links a{
+
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+
+}
+
+
+
+.footer-links a:hover{
+
+
+    color:var(--primary-color);
+
+
+}
+
+
+
+
+
+/* CONTATO */
+
+
+.footer-contact p{
+
+
+    color:#ddd;
+
+
+}
+
+
+
+.footer-contact a{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+    margin-top:20px;
+
+
+    width:max-content;
+
+
+    padding:12px 20px;
+
+
+    border-radius:50px;
+
+
+    background:#25D366;
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+
+/* REDES */
+
+
+.footer-social div{
+
+
+    display:flex;
+
+    gap:15px;
+
+
+}
+
+
+
+.footer-social a{
+
+
+    width:45px;
+
+    height:45px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.footer-social a:hover{
+
+
+    background:var(--primary-color);
+
+    color:#111;
+
+
+}
+
+
+
+
+
+/* COPYRIGHT */
+
+
+.footer-bottom{
+
+
+    margin-top:60px;
+
+    padding:20px;
+
+
     text-align:center;
 
+
+    border-top:
+
+    1px solid rgba(255,255,255,.08);
+
+
+    color:#999;
+
+    font-size:14px;
+
+
 }
 
 
-.footer h2{
 
-    margin-bottom:15px;
+
+
+@media(max-width:900px){
+
+
+    .footer-container{
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
 
 }
 
 
-.footer p{
 
-    opacity:.8;
 
-    margin:8px 0;
+@media(max-width:600px){
+
+
+    .footer-container{
+
+
+        grid-template-columns:1fr;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+    .footer-brand p{
+
+
+        margin:auto;
+
+
+    }
+
+
+
+    .footer-contact a{
+
+
+        margin:20px auto 0;
+
+
+    }
+
+
+
+    .footer-social div{
+
+
+        justify-content:center;
+
+
+    }
+
 
 }

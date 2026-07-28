@@ -1,17 +1,173 @@
+import {
+    FaWhatsapp,
+    FaInstagram,
+    FaGoogle,
+    FaPhone
+} from "react-icons/fa";
+
+
+import "./Contact.css";
+
+
+
 function Contact(){
 
-    return(
-        <section>
-            <h2>
-                Contato
-            </h2>
 
-            <p>
-                Entre em contato conosco pelo WhatsApp.
-            </p>
+    return(
+
+
+        <section 
+            className="contact"
+            id="contato"
+        >
+
+
+            <div className="contact-container">
+
+
+                <div className="contact-content">
+
+
+                    <span>
+                        Faça seu orçamento
+                    </span>
+
+
+                    <h2>
+                        Leve a experiência
+                        da Gama Pizzas
+                        para o seu evento
+                    </h2>
+
+
+                    <p>
+
+                        Aniversários, confraternizações,
+                        casamentos e eventos especiais.
+
+                        Nós levamos toda estrutura
+                        necessária para você aproveitar
+                        o melhor momento.
+
+                    </p>
+
+
+
+                    <div className="contact-buttons">
+
+
+                        <a
+                            href="https://wa.me/5543984483051"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-whatsapp"
+                        >
+
+                            <FaWhatsapp/>
+
+                            Solicitar orçamento
+
+                        </a>
+
+
+
+                        <a
+                            href="https://www.instagram.com/gamapizzas.gm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-instagram"
+                        >
+
+                            <FaInstagram/>
+
+                            Instagram
+
+                        </a>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div className="contact-info">
+
+
+
+                    <div className="info-card">
+
+
+                        <FaPhone/>
+
+
+                        <div>
+
+                            <h3>
+                                Telefones
+                            </h3>
+
+
+                            <p>
+                                (44) 99931-6666
+                            </p>
+
+                            <p>
+                                (43) 99977-2984
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <div className="info-card">
+
+
+                        <FaGoogle/>
+
+
+                        <div>
+
+                            <h3>
+                                Avaliações
+                            </h3>
+
+
+                            <p>
+                                Confira nossos clientes
+                                no Google
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
         </section>
+
+
     );
 
 }
+
+
 
 export default Contact;
