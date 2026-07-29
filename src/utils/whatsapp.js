@@ -1,4 +1,4 @@
-const whatsappNumber = "5543984483051";
+const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
 
 export function buildWhatsAppLink(message) {
   const encodedMessage = encodeURIComponent(message);
