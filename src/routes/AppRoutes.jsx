@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
-import MainLayout from "../components/layouts/MainLayout.jsx";
+import MainLayout from "../components/layouts/MainLayout";
 
-import Home from "../pages/Home/Home.jsx";
+import Home from "../pages/Home/Home";
 
 
 function AppRoutes() {

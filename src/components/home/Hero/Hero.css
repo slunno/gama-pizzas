@@ -2,498 +2,299 @@
    HERO PREMIUM - GAMA PIZZA
 ===================================================== */
 
+.hero {
+  position: relative;
 
-.hero{
+  width: 100%;
 
-    position:relative;
+  height: 100vh;
 
-    width:100%;
+  min-height: 650px;
 
-    height:100vh;
+  display: flex;
 
-    min-height:650px;
+  align-items: center;
 
-    display:flex;
+  justify-content: center;
 
-    align-items:center;
+  overflow: hidden;
 
-    justify-content:center;
-
-    overflow:hidden;
-
-    background:#11152f;
-
+  background: #11152f;
 }
-
-
 
 /* =====================================================
         IMAGEM DE FUNDO
 ===================================================== */
 
+.hero-background {
+  position: absolute;
 
-.hero-background{
+  inset: 0;
 
-    position:absolute;
+  background-image: url("/images/hero-pizza.jpg");
 
-    inset:0;
+  background-size: cover;
 
-    background-image:url("/images/hero-pizza.jpg");
+  background-position: center;
 
-    background-size:cover;
+  transform: scale(1.08);
 
-    background-position:center;
-
-    transform:scale(1.08);
-
-    animation:zoomHero 18s ease-in-out infinite alternate;
-
+  animation: zoomHero 18s ease-in-out infinite alternate;
 }
-
-
 
 /* =====================================================
         CAMADA ESCURA
 ===================================================== */
 
+.hero-overlay {
+  position: absolute;
 
-.hero-overlay{
+  inset: 0;
 
-    position:absolute;
+  background: linear-gradient(rgba(11, 13, 24, 0.7), rgba(11, 13, 24, 0.92));
 
-    inset:0;
-
-    background:
-
-    linear-gradient(
-
-        rgba(11,13,24,.70),
-
-        rgba(11,13,24,.92)
-
-    );
-
-    z-index:1;
-
+  z-index: 1;
 }
-
-
 
 /* =====================================================
         CONTEÚDO PRINCIPAL
 ===================================================== */
 
+.hero-content {
+  position: relative;
+  z-index: 3;
 
-.hero-content{
+  width: 100%;
+  max-width: 900px;
 
-    position:relative;
-    z-index:3;
+  padding: 30px;
+  padding-top: 90px;
 
-    width:100%;
-    max-width:900px;
+  text-align: center;
+  color: white;
 
-    padding:30px;
-    padding-top: 90px;
-
-    text-align:center;
-    color:white;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    transform:translateY(-60px);
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-60px);
 }
-
-
 
 /* =====================================================
         LOGO
 ===================================================== */
 
+.hero-logo {
+  width: 160px;
 
-.hero-logo{
+  max-width: 70%;
 
+  height: auto;
 
-    width:160px;
+  margin-bottom: 20px;
 
+  display: block;
 
-    max-width:70%;
-
-
-    height:auto;
-
-
-    margin-bottom:20px;
-
-
-    display:block;
-
-
-    animation:fadeUp .8s ease;
-
-
+  animation: fadeUp 0.8s ease;
 }
-
-
 
 /* =====================================================
         BADGE
 ===================================================== */
 
+.hero-badge {
+  display: flex;
 
-.hero-badge{
+  align-items: center;
 
-    display:flex;
+  justify-content: center;
 
-    align-items:center;
+  gap: 10px;
 
-    justify-content:center;
+  padding: 10px 24px;
 
-    gap:10px;
+  margin-bottom: 25px;
 
-    padding:10px 24px;
+  border-radius: 50px;
 
-    margin-bottom:25px;
+  border: 1px solid var(--primary-color);
 
-    border-radius:50px;
+  color: white;
 
-    border:1px solid var(--primary-color);
+  font-weight: 600;
 
-    color:white;
-
-    font-weight:600;
-
-    background:rgba(242,140,56,.08);
-
+  background: rgba(242, 140, 56, 0.08);
 }
 
+.hero-badge svg {
+  color: var(--primary-color);
 
-
-.hero-badge svg{
-
-    color:var(--primary-color);
-
-    font-size:20px;
-
+  font-size: 20px;
 }
-
-
 
 /* =====================================================
         TITULO
 ===================================================== */
 
+.hero-content h1 {
+  font-size: 72px;
 
-.hero-content h1{
+  line-height: 1.1;
 
+  font-weight: 800;
 
-    font-size:72px;
+  margin-bottom: 25px;
 
-
-    line-height:1.1;
-
-
-    font-weight:800;
-
-
-    margin-bottom:25px;
-
-
-    text-shadow:
-
-    0 5px 25px rgba(0,0,0,.45);
-
-
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.45);
 }
-
-
 
 /* =====================================================
         DESCRIÇÃO
 ===================================================== */
 
+.hero-content p {
+  max-width: 650px;
 
-.hero-content p{
+  margin: auto;
 
+  font-size: 20px;
 
-    max-width:650px;
+  line-height: 1.6;
 
-
-    margin:auto;
-
-
-    font-size:20px;
-
-
-    line-height:1.6;
-
-
-    color:#e5e5e5;
-
-
+  color: #e5e5e5;
 }
-
-
 
 /* =====================================================
         BOTÕES
 ===================================================== */
 
+.hero-actions {
+  display: flex;
 
-.hero-actions{
+  justify-content: center;
 
+  align-items: center;
 
-    display:flex;
+  gap: 20px;
 
+  margin-top: 45px;
 
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    gap:20px;
-
-
-    margin-top:45px;
-
-
-    flex-wrap:wrap;
-
-
+  flex-wrap: wrap;
 }
 
+.hero-button {
+  display: flex;
 
+  align-items: center;
 
-.hero-button{
+  justify-content: center;
 
+  gap: 10px;
 
-    display:flex;
+  padding: 16px 35px;
 
+  border-radius: 50px;
 
-    align-items:center;
+  font-size: 18px;
 
+  font-weight: 700;
 
-    justify-content:center;
+  text-decoration: none;
 
-
-    gap:10px;
-
-
-    padding:16px 35px;
-
-
-    border-radius:50px;
-
-
-    font-size:18px;
-
-
-    font-weight:700;
-
-
-    text-decoration:none;
-
-
-    transition:.3s ease;
-
-
+  transition: 0.3s ease;
 }
-
-
 
 /* BOTÃO PRINCIPAL */
 
-
 /* BOTÃO PRINCIPAL */
 
-.hero-button.primary{
+.hero-button.primary {
+  background: var(--primary-color);
 
+  color: #111;
 
-    background:var(--primary-color);
-
-
-    color:#111;
-
-
-    box-shadow:
-
-    0 10px 30px rgba(242,140,56,.45);
-
-
+  box-shadow: 0 10px 30px rgba(242, 140, 56, 0.45);
 }
 
+.hero-button.primary:hover {
+  background: var(--primary-hover);
 
+  color: #111;
 
-.hero-button.primary:hover{
+  transform: translateY(-5px);
 
-
-    background:var(--primary-hover);
-
-
-    color:#111;
-
-
-    transform:translateY(-5px);
-
-
-    box-shadow:
-
-    0 0 25px rgba(242,140,56,.8),
-
-    0 15px 40px rgba(242,140,56,.5);
-
-
+  box-shadow:
+    0 0 25px rgba(242, 140, 56, 0.8),
+    0 15px 40px rgba(242, 140, 56, 0.5);
 }
-
-
 
 /* WHATSAPP */
 
+.hero-button.whatsapp {
+  background: #25d366;
 
-.hero-button.whatsapp{
-
-
-    background:#25D366;
-
-
-    color:white;
-
-
+  color: white;
 }
-
-
 
 /* HOVER */
 
-
-.hero-button:hover{
-
-
-    transform:translateY(-5px);
-
-
+.hero-button:hover {
+  transform: translateY(-5px);
 }
-
-
 
 /* =====================================================
         ANIMAÇÃO FUNDO
 ===================================================== */
 
+@keyframes zoomHero {
+  from {
+    transform: scale(1.05);
+  }
 
-@keyframes zoomHero{
-
-
-    from{
-
-
-        transform:scale(1.05);
-
-
-    }
-
-
-    to{
-
-
-        transform:scale(1.12);
-
-
-    }
-
-
+  to {
+    transform: scale(1.12);
+  }
 }
-
-
 
 /* =====================================================
         TABLET
 ===================================================== */
 
-
-@media(max-width:900px){
-
-
-    .hero-content h1{
-
-
-        font-size:50px;
-
-
-    }
-
-
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 50px;
+  }
 }
-
-
 
 /* =====================================================
         MOBILE
 ===================================================== */
 
+@media (max-width: 600px) {
+  .hero-content {
+    padding-top: 120px;
+    transform: translateY(-10px);
+  }
 
-@media(max-width:600px){
+  .hero-logo {
+    width: 150px;
 
+    margin-bottom: 20px;
 
-    .hero-content{
+    transform: translateY(20px);
 
-        padding-top: 120px;
-        transform:translateY(-10px);
+    animation: fadeUp 0.8s ease;
+  }
 
+  .hero-content h1 {
+    font-size: 38px;
+  }
 
-    }
+  .hero-content p {
+    font-size: 17px;
+  }
 
-
-
-    .hero-logo{
-
-
-    width:150px;
-
-
-    margin-bottom:20px;
-
-
-    transform:translateY(20px);
-
-
-    animation:fadeUp .8s ease;
-
-
-    }
-
-
-
-    .hero-content h1{
-
-
-        font-size:38px;
-
-
-    }
-
-
-
-    .hero-content p{
-
-
-        font-size:17px;
-
-
-    }
-
-
-
-    .hero-button{
-
-
-        width:100%;
-
-
-    }
-
-
+  .hero-button {
+    width: 100%;
+  }
 }

@@ -2,364 +2,234 @@
    NAVBAR PREMIUM - GAMA PIZZAS
 ===================================================== */
 
+.navbar {
+  position: fixed;
 
-.navbar{
+  top: 0;
 
-    position:fixed;
+  left: 0;
 
-    top:0;
+  width: 100%;
 
-    left:0;
+  z-index: 3000;
 
-    width:100%;
+  padding: 15px 0;
 
-    z-index:3000;
-
-    padding:15px 0;
-
-    transition:.35s ease;
-
+  transition: 0.35s ease;
 }
 
+.navbar.scrolled {
+  background: rgba(10, 12, 25, 0.92);
 
+  backdrop-filter: blur(15px);
 
-.navbar.scrolled{
-
-    background:
-
-    rgba(10,12,25,.92);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-
-    0 10px 30px rgba(0,0,0,.35);
-
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
-
-
 
 /* CONTAINER */
 
+.navbar-container {
+  width: min(92%, 1200px);
 
-.navbar-container{
+  margin: auto;
 
-    width:min(92%,1200px);
+  display: flex;
 
-    margin:auto;
+  align-items: center;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
+  justify-content: space-between;
 }
-
-
 
 /* LOGO */
 
+.navbar-logo img {
+  width: 100px;
 
-.navbar-logo img{
-
-    width:100px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-
-
-.navbar-logo:hover img{
-
-    transform:scale(1.05);
-
+.navbar-logo:hover img {
+  transform: scale(1.05);
 }
-
-
 
 /* MENU DESKTOP */
 
+.navbar-menu {
+  display: flex;
 
-.navbar-menu{
+  align-items: center;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:35px;
-
+  gap: 35px;
 }
 
+.navbar-menu a {
+  color: white;
 
+  text-decoration: none;
 
-.navbar-menu a{
+  font-size: 16px;
 
-    color:white;
+  font-weight: 600;
 
-    text-decoration:none;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    position:relative;
-
+  position: relative;
 }
 
+.navbar-menu a::after {
+  content: "";
 
+  position: absolute;
 
-.navbar-menu a::after{
+  left: 0;
 
-    content:"";
+  bottom: -8px;
 
-    position:absolute;
+  width: 0;
 
-    left:0;
+  height: 2px;
 
-    bottom:-8px;
+  background: var(--primary-color);
 
-    width:0;
-
-    height:2px;
-
-    background:var(--primary-color);
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-
-
-.navbar-menu a:hover::after{
-
-    width:100%;
-
+.navbar-menu a:hover::after {
+  width: 100%;
 }
-
-
 
 /* BOTÃO WHATSAPP */
 
+.navbar-button {
+  display: flex;
 
-.navbar-button{
+  align-items: center;
 
-    display:flex;
+  gap: 10px;
 
-    align-items:center;
+  background: var(--primary-color);
 
-    gap:10px;
+  color: #111;
 
-    background:var(--primary-color);
+  padding: 13px 25px;
 
-    color:#111;
+  border-radius: 50px;
 
-    padding:13px 25px;
+  font-weight: 700;
 
-    border-radius:50px;
-
-    font-weight:700;
-
-    text-decoration:none;
-
+  text-decoration: none;
 }
-
-
 
 /* BOTÃO MOBILE */
 
+.navbar-toggle {
+  display: none;
 
-.navbar-toggle{
+  background: none;
 
-    display:none;
+  border: none;
 
-    background:none;
+  color: white;
 
-    border:none;
+  font-size: 30px;
 
-    color:white;
+  cursor: pointer;
 
-    font-size:30px;
-
-    cursor:pointer;
-
-    z-index:3005;
-
+  z-index: 3005;
 }
-
-
 
 /* FECHAR MENU */
 
-
-
-
-
-
 /* OVERLAY */
 
-
-.navbar-overlay{
-
-    display:none;
-
+.navbar-overlay {
+  display: none;
 }
-
-
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
+@media (max-width: 992px) {
+  .navbar-container {
+    width: 90%;
+  }
 
-@media(max-width:992px){
+  .navbar-logo img {
+    width: 70px;
+  }
 
+  .navbar-button {
+    display: none;
+  }
 
+  .navbar-toggle {
+    display: flex;
 
-.navbar-container{
+    align-items: center;
 
-    width:90%;
+    justify-content: center;
+  }
 
+  .navbar-menu {
+    position: fixed;
+
+    top: 0;
+
+    right: -100%;
+
+    width: 300px;
+
+    max-width: 85%;
+
+    height: 100vh;
+
+    background: #10132b;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    transition: 0.35s ease;
+
+    z-index: 3004;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar-menu a {
+    font-size: 22px;
+  }
+
+  /* FUNDO ESCURO */
+
+  .navbar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 3001;
+  }
 }
 
-
-
-.navbar-logo img{
-
-    width:70px;
-
-}
-
-
-
-.navbar-button{
-
-    display:none;
-
-}
-
-
-
-.navbar-toggle{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-
-.navbar-menu{
-
-
-    position:fixed;
-
-
-    top:0;
-
-
-    right:-100%;
-
-
-    width:300px;
-
-
-    max-width:85%;
-
-
-    height:100vh;
-
-
-    background:#10132b;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    gap:35px;
-
-
-    transition:.35s ease;
-
-
-    z-index:3004;
-
-
-}
-
-
-
-.navbar-menu.active{
-
-    right:0;
-
-}
-
-
-
-.navbar-menu a{
-
-    font-size:22px;
-
-}
-
-
-
-
-/* FUNDO ESCURO */
-
-
-.navbar-overlay{
-
-    display:block;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.65);
-
-    z-index:3001;
-
-}
-
-
-
-}
-
-
-
-
-@media(max-width:600px){
-
-
-.navbar-logo img{
-
-    width:70px;
-
-}
-
-
-.navbar-menu{
-
-    width:100%;
-
-    max-width:100%;
-
-}
-
-
+@media (max-width: 600px) {
+  .navbar-logo img {
+    width: 70px;
+  }
+
+  .navbar-menu {
+    width: 100%;
+
+    max-width: 100%;
+  }
 }

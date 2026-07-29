@@ -1,87 +1,71 @@
 export const flavors = {
+  menu1: {
+    title: "Cardápio 1 - 20 Sabores",
 
-    menu1: {
+    salty: [
+      "Mussarela",
+      "Calabresa",
+      "Milho",
+      "Marguerita",
+      "Frango com Catupiry",
+      "Brócolis com Bacon",
+      "Quatro Queijos",
+      "Zucchini",
+      "Lombo com Creme de Abacaxi",
+      "Costela com Pasta de Alho",
+      "Portuguesa",
+      "Baiana",
+      "Rúcula com Tomate Seco",
+      "Calabresa Acebolada",
+    ],
 
-        title:"Cardápio 1 - 20 Sabores",
+    sweet: [
+      "Banana com Canela",
+      "Brigadeiro",
+      "Ovomaltine",
+      "Cocada",
+      "Oreo",
+      "Romeu e Julieta",
+    ],
+  },
 
-        salty:[
+  menu2: {
+    title: "Cardápio 2 - 30 Sabores",
 
-            "Mussarela",
-            "Calabresa",
-            "Milho",
-            "Marguerita",
-            "Frango com Catupiry",
-            "Brócolis com Bacon",
-            "Quatro Queijos",
-            "Zucchini",
-            "Lombo com Creme de Abacaxi",
-            "Costela com Pasta de Alho",
-            "Portuguesa",
-            "Baiana",
-            "Rúcula com Tomate Seco",
-            "Calabresa Acebolada"
+    salty: [
+      "Mussarela",
+      "Calabresa",
+      "Milho com Catupiry",
+      "Marguerita",
+      "Pepperoni",
+      "Frango com Catupiry",
+      "Brócolis com Bacon",
+      "Quatro Queijos",
+      "Carbonara",
+      "Zucchini",
+      "Lombo com Creme de Abacaxi",
+      "Alcatra Defumada",
+      "Crocante",
+      "Napolitana",
+      "Palmito",
+      "Costela com Pasta de Alho",
+      "Baiana",
+      "Portuguesa",
+      "Rúcula com Tomate Seco e Parma",
+      "Calabresa Acebolada",
+      "Atum",
+    ],
 
-        ],
-
-        sweet:[
-
-            "Banana com Canela",
-            "Brigadeiro",
-            "Ovomaltine",
-            "Cocada",
-            "Oreo",
-            "Romeu e Julieta"
-
-        ]
-
-    },
-
-
-    menu2:{
-
-        title:"Cardápio 2 - 30 Sabores",
-
-        salty:[
-
-            "Mussarela",
-            "Calabresa",
-            "Milho com Catupiry",
-            "Marguerita",
-            "Pepperoni",
-            "Frango com Catupiry",
-            "Brócolis com Bacon",
-            "Quatro Queijos",
-            "Carbonara",
-            "Zucchini",
-            "Lombo com Creme de Abacaxi",
-            "Alcatra Defumada",
-            "Crocante",
-            "Napolitana",
-            "Palmito",
-            "Costela com Pasta de Alho",
-            "Baiana",
-            "Portuguesa",
-            "Rúcula com Tomate Seco e Parma",
-            "Calabresa Acebolada",
-            "Atum"
-
-        ],
-
-
-        sweet:[
-
-            "Banana com Canela",
-            "Brigadeiro",
-            "Sensação",
-            "Chocolate Suprema",
-            "M&M's",
-            "Cocada",
-            "Oreo",
-            "Banoffee",
-            "Pé de Moleque"
-
-        ]
-
-    }
-
+    sweet: [
+      "Banana com Canela",
+      "Brigadeiro",
+      "Sensação",
+      "Chocolate Suprema",
+      "M&M's",
+      "Cocada",
+      "Oreo",
+      "Banoffee",
+      "Pé de Moleque",
+    ],
+  },
 };

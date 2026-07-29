@@ -1,42 +1,27 @@
-:root{
+:root {
+  /* CORES PRINCIPAIS */
 
+  --primary-color: #f28c38;
 
-    /* CORES PRINCIPAIS */
+  --primary-hover: #ff9f4d;
 
-    --primary-color:#F28C38;
+  --background-dark: #0d1024;
 
-    --primary-hover:#ff9f4d;
+  --background-card: #151a35;
 
+  --text-color: #ffffff;
 
-    --background-dark:#0D1024;
+  --text-secondary: #cfcfcf;
 
-    --background-card:#151A35;
+  /* EFEITOS */
 
+  --glass-background: rgba(255, 255, 255, 0.06);
 
-    --text-color:#ffffff;
+  --glass-border: rgba(255, 255, 255, 0.12);
 
-    --text-secondary:#cfcfcf;
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.35);
 
+  /* ANIMAÇÕES */
 
-
-    /* EFEITOS */
-
-    --glass-background:
-    rgba(255,255,255,.06);
-
-
-    --glass-border:
-    rgba(255,255,255,.12);
-
-
-    --shadow-premium:
-    0 20px 50px rgba(0,0,0,.35);
-
-
-
-    /* ANIMAÇÕES */
-
-    --transition:.35s ease;
-
-
+  --transition: 0.35s ease;
 }

@@ -2,55 +2,22 @@
    COMPONENTES PREMIUM
 ================================= */
 
+.card-premium {
+  background: var(--glass-background);
 
-.card-premium{
+  border: 1px solid var(--glass-border);
 
+  backdrop-filter: blur(15px);
 
-    background:
+  border-radius: 25px;
 
-    var(--glass-background);
+  box-shadow: var(--shadow-premium);
 
-
-    border:
-
-    1px solid var(--glass-border);
-
-
-    backdrop-filter:
-
-    blur(15px);
-
-
-    border-radius:
-
-    25px;
-
-
-    box-shadow:
-
-    var(--shadow-premium);
-
-
-    transition:
-
-    var(--transition);
-
-
+  transition: var(--transition);
 }
 
+.card-premium:hover {
+  transform: translateY(-10px);
 
-
-.card-premium:hover{
-
-
-    transform:
-
-    translateY(-10px);
-
-
-    border-color:
-
-    rgba(242,140,56,.5);
-
-
+  border-color: rgba(242, 140, 56, 0.5);
 }

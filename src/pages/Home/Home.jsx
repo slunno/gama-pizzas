@@ -6,26 +6,20 @@ import Contact from "../../components/home/Contact/Contact.jsx";
 
 import "./Home.css";
 
+function Home() {
+  return (
+    <div className="home">
+      <Hero />
 
-function Home(){
+      <History />
 
-    return(
-        <div className="home">
+      <Rodizios />
 
-            <Hero />
+      <Gallery />
 
-            <History />
-
-            <Rodizios />
-
-            <Gallery />
-
-            <Contact />
-
-        </div>
-    );
-
+      <Contact />
+    </div>
+  );
 }
-
 
 export default Home;
