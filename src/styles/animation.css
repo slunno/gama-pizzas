@@ -1,0 +1,18 @@
+:root {
+
+    --transition-fast: .2s;
+
+    --transition-normal: .3s;
+
+    --transition-slow: .5s;
+
+}
+:root {
+
+    --ease-default: ease;
+
+    --ease-smooth: ease-in-out;
+
+    --ease-enter: cubic-bezier(.4,0,.2,1);
+
+}

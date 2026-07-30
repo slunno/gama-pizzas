@@ -1,5 +1,5 @@
 import { FaWhatsapp, FaInstagram, FaGoogle, FaPhone } from "react-icons/fa";
-
+import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
 
 import "./Contact.css";
@@ -11,13 +11,16 @@ function Contact() {
         <div className="contact-content" data-aos="fade-right">
           <span>Faça seu orçamento</span>
 
-          <h2>Leve a experiência da Gama Pizzas para o seu evento</h2>
-
-          <p>
-            Aniversários, confraternizações, casamentos e eventos especiais. Nós
+          <section>
+            <SectionTitle
+                title="Leve a experiência da Gama Pizzas para o seu evento"  
+                subtitle="Aniversários, confraternizações, casamentos e eventos especiais. Nós
             levamos toda estrutura necessária para você aproveitar o melhor
-            momento.
-          </p>
+            momento."        
+            />
+
+          
+          </section>
 
           <div className="contact-buttons">
             <a

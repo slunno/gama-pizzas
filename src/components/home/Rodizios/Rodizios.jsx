@@ -1,15 +1,14 @@
 import { flavors } from "../../../data/FlavorsData";
 
-import { buildWhatsAppLink } from "../../../utils/whatsapp";
 
 import "./Rodizios.css";
+import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
 
 import {
   FaPizzaSlice,
   FaHamburger,
   FaUsers,
   FaChild,
-  FaWhatsapp,
 } from "react-icons/fa";
 
 const menus = [
@@ -125,12 +124,13 @@ function Rodizios() {
           <div className="flavors-header">
             <span>Sabores disponíveis</span>
 
-            <h2>Conheça nossos sabores</h2>
-
-            <p>
-              Trabalhamos com opções salgadas e doces para deixar seu evento
-              completo.
-            </p>
+            <section id="rodizios">
+                <SectionTitle
+                    title="Rodízios"
+                    subtitle="Escolha a melhor opção para o seu evento."
+                />
+                ...
+            </section>
           </div>
 
           <div className="flavors-grid">

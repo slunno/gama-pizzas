@@ -1,8 +1,7 @@
-import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 import logo from "../../../assets/images/logo.png";
-
-import { buildWhatsAppLink } from "../../../utils/whatsapp";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 import "./Footer.css";
 

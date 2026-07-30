@@ -2,16 +2,12 @@ import { FaWhatsapp, FaPizzaSlice } from "react-icons/fa";
 
 import logo from "../../../assets/images/logo.png";
 import background from "../../../assets/images/pizza-background.png";
-
-import { buildWhatsAppLink } from "../../../utils/whatsapp";
+import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
 
 import "./Hero.css";
 
 function Hero() {
-  const whatsappLink = buildWhatsAppLink(
-    "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas.",
-  );
-
+  
   return (
     <section className="hero" id="inicio">
       <div
@@ -32,16 +28,14 @@ function Hero() {
           <span>Rodízio de Pizzas</span>
         </div>
 
-        <h1>
-          O sabor que reúne
-          <br />
-          família e amigos
-        </h1>
+        <section>
+            <SectionTitle
+              title="O sabor que reune a família"
+              subtitle="Leve a experiência da Gama Pizzas até o seu evento com pizzas artesanais, estrutura completa e sabores incríveis."
+            />
+          </section>
 
-        <p>
-          Levamos a experiência da Gama Pizzas até o seu evento com pizzas
-          artesanais, estrutura completa e sabores incríveis.
-        </p>
+
 
         <div className="hero-actions">
           <a href="#rodizios" className="hero-button primary">

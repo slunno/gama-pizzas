@@ -5,7 +5,7 @@ import pizza2 from "../../../assets/images/gallery/pizza2.jpg";
 import evento1 from "../../../assets/images/gallery/evento1.jpg";
 import evento2 from "../../../assets/images/gallery/evento2.jpg";
 import equipe from "../../../assets/images/gallery/equipe.jpg";
-
+import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
 function Gallery() {
   const images = [
     {
@@ -40,9 +40,12 @@ function Gallery() {
         <div className="gallery-header">
           <span>Galeria</span>
 
-          <h2>Momentos que fazem história</h2>
-
-          <p>Confira alguns momentos da experiência Gama Pizzas.</p>
+          <section>
+            <SectionTitle
+              title="Galeria"
+              subtitle="Confira alguns momentos da experiência Gama Pizzas."
+            />
+          </section>
         </div>
 
         <div className="gallery-grid">
