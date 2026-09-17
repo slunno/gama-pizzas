@@ -1,7 +1,6 @@
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 import logo from "../../../assets/images/logo.png";
-import SectionTitle from "../SectionTitle/SectionTitle";
 
 import "./Footer.css";
 
@@ -41,9 +40,13 @@ function Footer() {
         <div className="footer-contact">
           <h3>Contato</h3>
 
-          <p>📞 (44) 99931-6666</p>
+          <p>
+            📞 <a href="tel:+5544999316666">(44) 99931-6666</a>
+          </p>
 
-          <p>📞 (43) 99977-2984</p>
+          <p>
+            📞 <a href="tel:+5543999772984">(43) 99977-2984</a>
+          </p>
         </div>
 
         {/* REDES */}
@@ -52,12 +55,13 @@ function Footer() {
           <h3>Redes Sociais</h3>
 
           <div>
-            <a href="#">
+            <a
+              href="https://www.instagram.com/gamapizzas.gm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Gama Pizzas"
+            >
               <FaInstagram />
-            </a>
-
-            <a href="#">
-              <FaFacebook />
             </a>
           </div>
         </div>

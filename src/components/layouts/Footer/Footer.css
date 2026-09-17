@@ -68,30 +68,17 @@
 
 .footer-contact p {
   color: #ddd;
+  margin-bottom: 12px;
 }
 
 .footer-contact a {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  margin-top: 20px;
-
-  width: max-content;
-
-  padding: 12px 20px;
-
-  border-radius: 50px;
-
-  background: #25d366;
-
-  color: white;
-
+  color: #ddd;
   text-decoration: none;
+  transition: 0.3s;
+}
 
-  font-weight: 700;
+.footer-contact a:hover {
+  color: var(--primary-color);
 }
 
 /* REDES */

@@ -2,6 +2,7 @@ import Hero from "../../components/home/Hero/Hero.jsx";
 import History from "../../components/home/History/History.jsx";
 import Rodizios from "../../components/home/Rodizios/Rodizios.jsx";
 import Gallery from "../../components/home/Gallery/Gallery.jsx";
+import FAQ from "../../components/home/FAQ/FAQ.jsx";
 import Contact from "../../components/home/Contact/Contact.jsx";
 
 import "./Home.css";
@@ -16,6 +17,8 @@ function Home() {
       <Rodizios />
 
       <Gallery />
+
+      <FAQ />
 
       <Contact />
     </div>

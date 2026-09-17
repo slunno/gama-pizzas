@@ -61,10 +61,24 @@ function Navbar() {
             Galeria
           </a>
 
+          <a href="#faq" onClick={closeMenu}>
+            Dúvidas
+          </a>
+
           <a href="#contato" onClick={closeMenu}>
             Contato
           </a>
         </nav>
+
+        <a
+          href={buildWhatsAppLink("Olá! Gostaria de consultar a disponibilidade da Gama Pizzas para o meu evento.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-button"
+        >
+          <FaWhatsapp />
+          <span>Orçamento</span>
+        </a>
 
         {menuOpen && <div className="navbar-overlay" onClick={closeMenu} />}
 

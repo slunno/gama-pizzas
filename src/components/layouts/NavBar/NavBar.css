@@ -100,22 +100,23 @@
 
 .navbar-button {
   display: flex;
-
   align-items: center;
-
-  gap: 10px;
-
+  gap: 8px;
   background: var(--primary-color);
-
   color: #111;
-
-  padding: 13px 25px;
-
+  padding: 10px 22px;
   border-radius: 50px;
-
   font-weight: 700;
-
+  font-size: 14px;
   text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(242, 140, 56, 0.35);
+}
+
+.navbar-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 140, 56, 0.55);
 }
 
 /* BOTÃO MOBILE */

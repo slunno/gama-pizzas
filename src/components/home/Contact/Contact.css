@@ -1,168 +1,259 @@
+/* =====================================================
+   CONTATO - GAMA PIZZAS (Redesign Moderno & Conversão)
+===================================================== */
+
 .contact {
   padding: 120px 0;
-
   background: #0d1024;
-
   color: white;
+  position: relative;
 }
 
 .contact-container {
-  width: min(90%, 1200px);
-
+  width: min(92%, 1200px);
   margin: auto;
-
   display: grid;
-
-  grid-template-columns: 1.2fr 0.8fr;
-
+  grid-template-columns: 1.25fr 0.85fr;
   gap: 70px;
-
   align-items: center;
 }
 
-.contact-content span {
-  color: var(--primary-color);
+/* =====================================================
+   COLUNA ESQUERDA
+===================================================== */
 
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(242, 140, 56, 0.12);
+  color: var(--primary-color);
+  border: 1px solid rgba(242, 140, 56, 0.3);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
 }
 
 .contact-content h2 {
-  font-size: 48px;
-
-  line-height: 1.2;
-
-  margin: 20px 0;
+  font-size: 42px;
+  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: white;
 }
 
-.contact-content p {
-  color: #ccc;
-
-  font-size: 18px;
-
+.contact-desc {
+  color: #cfd3e6;
+  font-size: 17px;
   line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.contact-buttons {
+/* PASSOS RÁPIDOS */
+.booking-steps {
   display: flex;
-
-  gap: 20px;
-
-  margin-top: 40px;
-
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  background: rgba(21, 26, 53, 0.6);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
 }
 
-.contact-buttons a {
+.step-item {
   display: flex;
-
   align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #e5e8f5;
+  font-weight: 600;
+}
 
+.step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.step-arrow {
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* BOTÕES DE AÇÃO */
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-whatsapp,
+.contact-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
-
-  padding: 15px 30px;
-
+  padding: 15px 32px;
   border-radius: 50px;
-
   text-decoration: none;
-
   font-weight: 700;
-
-  transition: 0.3s;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .contact-whatsapp {
   background: #25d366;
-
   color: white;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
+}
+
+.contact-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
 }
 
 .contact-instagram {
-  background: #d62976;
-
+  background: rgba(21, 26, 53, 0.8);
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.contact-buttons a:hover {
-  transform: translateY(-5px);
+.contact-instagram:hover {
+  background: rgba(21, 26, 53, 1);
+  border-color: #e1306c;
+  color: #e1306c;
+  transform: translateY(-3px);
 }
 
-/* INFORMAÇÕES */
+/* =====================================================
+   COLUNA DIREITA (CARDS DE INFORMAÇÃO)
+===================================================== */
 
-.contact-info {
+.contact-info-grid {
   display: flex;
-
   flex-direction: column;
-
-  gap: 25px;
+  gap: 22px;
 }
 
 .info-card {
   display: flex;
-
-  align-items: center;
-
-  gap: 25px;
-
-  padding: 30px;
-
-  border-radius: 25px;
-
-  background: rgba(255, 255, 255, 0.05);
-
+  align-items: flex-start;
+  gap: 22px;
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(21, 26, 53, 0.65);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
 }
 
-.info-card svg {
-  font-size: 35px;
+.info-card:hover {
+  border-color: rgba(242, 140, 56, 0.35);
+  background: rgba(21, 26, 53, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
 
+.info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(242, 140, 56, 0.12);
+  border: 1px solid rgba(242, 140, 56, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.info-details h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px;
+}
+
+.info-details p {
+  color: #cfd3e6;
+  font-size: 14.5px;
+  margin: 0 0 6px;
+}
+
+.info-details p a {
+  color: #cfd3e6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.info-details p a:hover {
   color: var(--primary-color);
 }
 
-.info-card h3 {
-  margin: 0 0 10px;
+.info-status {
+  display: inline-block;
+  font-size: 12px;
+  color: #4ade80;
+  font-weight: 600;
+  margin-top: 4px;
 }
 
-.info-card p {
-  margin: 5px 0;
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
 
-  color: #ddd;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
 
   .contact-content h2 {
-    font-size: 35px;
+    font-size: 34px;
   }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 600px) {
   .contact {
     padding: 80px 0;
   }
 
-  .contact-container {
-    width: 90%;
-
-    gap: 40px;
-  }
-
-  .contact-content {
-    text-align: center;
+  .contact-content h2 {
+    font-size: 28px;
   }
 
   .contact-buttons {
     flex-direction: column;
   }
 
-  .contact-buttons a {
+  .contact-whatsapp,
+  .contact-instagram {
     width: 100%;
-
-    justify-content: center;
   }
 
-  .info-card {
-    padding: 25px;
+  .booking-steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .step-arrow {
+    display: none;
   }
 }

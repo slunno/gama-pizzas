@@ -24,4 +24,10 @@
   /* ANIMAÇÕES */
 
   --transition: 0.35s ease;
+
+  /* TIPOGRAFIA */
+
+  --font-display: "Fredoka", "Arial", sans-serif;
+
+  --font-body: "Inter", "Arial", sans-serif;
 }

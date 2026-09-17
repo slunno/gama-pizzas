@@ -1,7 +1,5 @@
-import { FaWhatsapp, FaInstagram, FaGoogle, FaPhone } from "react-icons/fa";
-import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
+import { FaWhatsapp, FaInstagram, FaPhoneAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
-
 import "./Contact.css";
 
 function Contact() {
@@ -9,30 +7,45 @@ function Contact() {
     <section className="contact" id="contato">
       <div className="contact-container">
         <div className="contact-content" data-aos="fade-right">
-          <span>Faça seu orçamento</span>
+          <span className="contact-badge">
+            <FaCalendarAlt /> Orçamento Rápido & Sem Compromisso
+          </span>
 
-          <section>
-            <SectionTitle
-                title="Leve a experiência da Gama Pizzas para o seu evento"  
-                subtitle="Aniversários, confraternizações, casamentos e eventos especiais. Nós
-            levamos toda estrutura necessária para você aproveitar o melhor
-            momento."        
-            />
+          <h2>Vamos combinar a pizza do seu evento?</h2>
 
-          
-          </section>
+          <p className="contact-desc">
+            Aniversário, casamento, confraternização de empresa ou reunião em família:
+            informe a data estimada, a cidade e o número de convidados. Nós montamos a proposta
+            ideal em poucos minutos.
+          </p>
+
+          <div className="booking-steps">
+            <div className="step-item">
+              <span className="step-num">1</span>
+              <span>Envie a data e local</span>
+            </div>
+            <div className="step-arrow">→</div>
+            <div className="step-item">
+              <span className="step-num">2</span>
+              <span>Escolha o cardápio</span>
+            </div>
+            <div className="step-arrow">→</div>
+            <div className="step-item">
+              <span className="step-num">3</span>
+              <span>Receba a proposta</span>
+            </div>
+          </div>
 
           <div className="contact-buttons">
             <a
               href={buildWhatsAppLink(
-                "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas.",
+                "Olá! Gostaria de solicitar um orçamento para o rodízio da Gama Pizzas no meu evento.",
               )}
               target="_blank"
               rel="noopener noreferrer"
               className="contact-whatsapp"
             >
-              <FaWhatsapp />
-              Solicitar orçamento
+              <FaWhatsapp /> Falar no WhatsApp Agora
             </a>
 
             <a
@@ -41,32 +54,35 @@ function Contact() {
               rel="noopener noreferrer"
               className="contact-instagram"
             >
-              <FaInstagram />
-              Instagram
+              <FaInstagram /> Seguir no Instagram
             </a>
           </div>
         </div>
 
-        <div className="contact-info" data-aos="fade-left">
+        <div className="contact-info-grid" data-aos="fade-left">
           <div className="info-card">
-            <FaPhone />
-
-            <div>
-              <h3>Telefones</h3>
-
-              <p>(44) 99931-6666</p>
-
-              <p>(43) 99977-2984</p>
+            <div className="info-icon">
+              <FaPhoneAlt />
+            </div>
+            <div className="info-details">
+              <h3>Fale por Telefone</h3>
+              <p>
+                <a href="tel:+5544999316666">(44) 99931-6666</a>
+              </p>
+              <p>
+                <a href="tel:+5543999772984">(43) 99977-2984</a>
+              </p>
             </div>
           </div>
 
           <div className="info-card">
-            <FaGoogle />
-
-            <div>
-              <h3>Avaliações</h3>
-
-              <p>Confira nossos clientes no Google</p>
+            <div className="info-icon">
+              <FaClock />
+            </div>
+            <div className="info-details">
+              <h3>Horário de Atendimento</h3>
+              <p>Segunda a Domingo: 08h às 22h</p>
+              <span className="info-status">🟢 Respondemos rapidamente</span>
             </div>
           </div>
         </div>

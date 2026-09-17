@@ -1,68 +1,91 @@
 import "./Gallery.css";
+import { FaImages, FaInstagram } from "react-icons/fa";
 
-import pizza1 from "../../../assets/images/gallery/pizza1.jpg";
-import pizza2 from "../../../assets/images/gallery/pizza2.jpg";
-import evento1 from "../../../assets/images/gallery/evento1.jpg";
-import evento2 from "../../../assets/images/gallery/evento2.jpg";
-import equipe from "../../../assets/images/gallery/equipe.jpg";
-import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
+import pizzaMarguerita from "../../../assets/images/pizzas/marguerita.jpg";
+import pizzaCalabresa from "../../../assets/images/pizzas/calabresa.jpg";
+import pizzaQuatroQueijos from "../../../assets/images/pizzas/quatro-queijos.jpg";
+import pizzaPepperoni from "../../../assets/images/pizzas/pepperoni.jpg";
+import pizzaFrango from "../../../assets/images/pizzas/frango-catupiry.jpg";
+import pizzaSensacao from "../../../assets/images/pizzas/sensacao.jpg";
+
 function Gallery() {
-  const images = [
+  const items = [
     {
-      image: evento1,
-      title: "Eventos especiais",
+      image: pizzaCalabresa,
+      title: "Calabresa Artesanal Acebolada",
+      tag: "Mais Pedida",
     },
-
     {
-      image: pizza1,
-      title: "Pizzas artesanais",
+      image: pizzaMarguerita,
+      title: "Marguerita Tradicional",
+      tag: "Clássica",
     },
-
     {
-      image: evento2,
-      title: "Rodízios completos",
+      image: pizzaQuatroQueijos,
+      title: "Quatro Queijos Gratinada",
+      tag: "Gourmet",
     },
-
     {
-      image: pizza2,
-      title: "Sabores exclusivos",
+      image: pizzaPepperoni,
+      title: "Pepperoni Importado Especial",
+      tag: "Favorita",
     },
-
     {
-      image: equipe,
-      title: "Nossa equipe",
+      image: pizzaFrango,
+      title: "Frango Desfiado com Catupiry",
+      tag: "Especial",
+    },
+    {
+      image: pizzaSensacao,
+      title: "Sensação (Chocolate & Morango)",
+      tag: "Doce Artesanal",
     },
   ];
 
   return (
     <section className="gallery" id="galeria">
       <div className="gallery-container">
-        <div className="gallery-header">
-          <span>Galeria</span>
-
-          <section>
-            <SectionTitle
-              title="Galeria"
-              subtitle="Confira alguns momentos da experiência Gama Pizzas."
-            />
-          </section>
+        <div className="gallery-header" data-aos="fade-up">
+          <span className="gallery-badge">
+            <FaImages /> Registros & Sabores
+          </span>
+          <h2>Cada evento, uma história diferente</h2>
+          <p>
+            Um vislumbre das fatias artesanais que saem direto do nosso forno profissional para a
+            mão dos seus convidados.
+          </p>
         </div>
 
         <div className="gallery-grid">
-          {images.map((item, index) => (
+          {items.map((item, index) => (
             <div
-              className="gallery-item"
+              className="gallery-card"
               key={index}
               data-aos="zoom-in"
-              data-aos-delay={index * 100}
+              data-aos-delay={index * 80}
             >
-              <img src={item.image} alt={item.title} />
+              <div className="gallery-img-box">
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <span className="card-tag">{item.tag}</span>
+              </div>
 
-              <div className="gallery-overlay">
+              <div className="gallery-card-info">
                 <h3>{item.title}</h3>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="gallery-footer-cta" data-aos="fade-up">
+          <p>Quer ver mais fotos de rodízios e bastidores dos eventos?</p>
+          <a
+            href="https://www.instagram.com/gamapizzas.gm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gallery-insta-btn"
+          >
+            <FaInstagram /> Acompanhe no Instagram @gamapizzas.gm
+          </a>
         </div>
       </div>
     </section>
