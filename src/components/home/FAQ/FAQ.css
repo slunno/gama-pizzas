@@ -1,210 +1,127 @@
-/* =====================================================
-   FAQ - GAMA PIZZAS (Inspirado no Mobirise com Identidade Gama)
-===================================================== */
-
 .faq-section {
-  padding: 120px 0;
-  background: linear-gradient(180deg, #0d1024 0%, #0a0d1e 100%);
-  color: white;
-  position: relative;
+  padding: var(--section-space) 0;
+  color: var(--text);
+  background: var(--sand);
 }
 
 .faq-container {
-  width: min(92%, 1200px);
-  margin: auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.2fr;
-  gap: 60px;
-  align-items: flex-start;
+  width: min(calc(100% - 2.5rem), var(--container));
+  align-items: start;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  margin: 0 auto;
 }
 
-/* =====================================================
-   LADO ESQUERDO: CARD VISUAL
-===================================================== */
-
 .faq-visual-card {
-  position: sticky;
-  top: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  color: var(--text-inverse);
+  background: var(--ink);
+  box-shadow: var(--shadow-soft);
 }
 
 .faq-img-wrapper {
   position: relative;
-  border-radius: 22px;
+  aspect-ratio: 1.05;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faq-img {
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.faq-visual-card:hover .faq-img {
-  transform: scale(1.04);
+  filter: saturate(0.85);
 }
 
 .faq-img-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(13, 16, 36, 0.85);
-  backdrop-filter: blur(10px);
-  color: var(--primary-color);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 700;
-  display: flex;
+  bottom: 1rem;
+  left: 1rem;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(242, 140, 56, 0.3);
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(11, 14, 26, 0.72);
+  font-size: 0.62rem;
+  font-weight: 800;
+  backdrop-filter: blur(10px);
+}
+
+.faq-img-badge svg {
+  color: var(--orange);
 }
 
 .faq-cta-box {
-  background: rgba(21, 26, 53, 0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(242, 140, 56, 0.25);
-  border-radius: 20px;
-  padding: 30px 26px;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  padding: 1.7rem;
 }
 
 .faq-cta-box h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 8px;
+  font-size: 1.35rem;
 }
 
 .faq-cta-box p {
-  font-size: 14px;
-  color: #a0a6c2;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-top: 0.65rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.82rem;
 }
 
 .faq-whatsapp-btn {
   display: inline-flex;
+  min-height: 46px;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 13px 22px;
-  border-radius: 50px;
-  background: #25d366;
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 800;
 }
-
-.faq-whatsapp-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
-}
-
-/* =====================================================
-   LADO DIREITO: ACCORDION
-===================================================== */
 
 .faq-accordion-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.faq-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(242, 140, 56, 0.12);
-  color: var(--primary-color);
-  border: 1px solid rgba(242, 140, 56, 0.3);
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  width: max-content;
-  margin-bottom: 16px;
+  padding-top: 0.5rem;
 }
 
 .faq-accordion-wrapper h2 {
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1.25;
-  color: white;
-  margin-bottom: 12px;
+  max-width: 720px;
 }
 
 .faq-subtitle {
-  color: #cfd3e6;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 35px;
+  max-width: 620px;
+  margin-top: 1rem;
+  color: var(--text-muted);
 }
 
 .accordion-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(20, 22, 35, 0.18);
 }
 
 .accordion-item {
-  background: rgba(21, 26, 53, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.accordion-item.open {
-  border-color: rgba(242, 140, 56, 0.45);
-  background: rgba(21, 26, 53, 0.95);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(20, 22, 35, 0.18);
 }
 
 .accordion-header {
-  width: 100%;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 22px 24px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
+  gap: 1.5rem;
+  padding: 1.35rem 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
   text-align: left;
-  cursor: pointer;
-  transition: color 0.25s ease;
 }
 
-.accordion-header span {
-  flex: 1;
-}
-
-.accordion-item.open .accordion-header {
-  color: var(--primary-color);
-}
-
-.chevron-icon {
-  font-size: 14px;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
+.accordion-header svg {
   flex-shrink: 0;
+  color: var(--orange-deep);
+  transition: transform var(--transition);
 }
 
 .chevron-icon.rotate {
@@ -212,60 +129,62 @@
 }
 
 .accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease;
 }
 
 .accordion-body.expanded {
-  max-height: 300px;
+  grid-template-rows: 1fr;
 }
 
 .accordion-content {
-  padding: 0 24px 22px;
+  overflow: hidden;
 }
 
 .accordion-content p {
-  color: #cfd3e6;
-  font-size: 14.5px;
-  line-height: 1.7;
-  margin: 0;
+  max-width: 70ch;
+  padding: 0 2.5rem 1.35rem 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.75;
 }
 
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-@media (max-width: 992px) {
+@media (max-width: 880px) {
   .faq-container {
     grid-template-columns: 1fr;
-    gap: 50px;
   }
 
   .faq-visual-card {
-    position: static;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
   }
 
-  .faq-accordion-wrapper h2 {
-    font-size: 32px;
+  .faq-img-wrapper {
+    aspect-ratio: auto;
+    min-height: 330px;
+  }
+
+  .faq-cta-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
-@media (max-width: 600px) {
-  .faq-section {
-    padding: 80px 0;
+@media (max-width: 620px) {
+  .faq-container {
+    width: min(calc(100% - 2rem), var(--container));
   }
 
-  .faq-accordion-wrapper h2 {
-    font-size: 26px;
+  .faq-visual-card {
+    display: block;
+    border-radius: var(--radius-md);
   }
 
-  .accordion-header {
-    padding: 18px 20px;
-    font-size: 15px;
-  }
-
-  .accordion-content {
-    padding: 0 20px 18px;
+  .faq-img-wrapper {
+    aspect-ratio: 1.25;
+    min-height: 0;
   }
 }

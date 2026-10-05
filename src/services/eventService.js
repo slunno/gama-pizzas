@@ -1,27 +1,25 @@
-import { api } from "../config";
-
 const eventService = {
     getAll() {
         // TODO
     },
 
-    getById(id) {
+    getById(_id) {
         // TODO
     },
 
-    create(data) {
+    create(_data) {
         // TODO
     },
 
-    update(id, data) {
+    update(_id, _data) {
         // TODO
     },
 
-    changeStatus(id, status) {
+    changeStatus(_id, _status) {
         // TODO
     },
 
-    linkEmployee(eventId, employeeData) {
+    linkEmployee(_eventId, _employeeData) {
         // TODO
     },
 };

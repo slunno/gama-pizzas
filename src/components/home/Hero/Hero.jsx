@@ -1,241 +1,151 @@
-import { useState, useCallback, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-import AnimatedGradient from "./AnimatedGradient";
+import { useEffect, useState } from "react";
+import {
+  FaArrowDown,
+  FaChevronLeft,
+  FaChevronRight,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 import imgMarguerita from "../../../assets/images/pizzas/marguerita.jpg";
 import imgCalabresa from "../../../assets/images/pizzas/calabresa.jpg";
 import imgQuatroQueijos from "../../../assets/images/pizzas/quatro-queijos.jpg";
 import imgPepperoni from "../../../assets/images/pizzas/pepperoni.jpg";
-import imgFrangoCatupiry from "../../../assets/images/pizzas/frango-catupiry.jpg";
+import imgFrango from "../../../assets/images/pizzas/frango-catupiry.jpg";
 import imgSensacao from "../../../assets/images/pizzas/sensacao.jpg";
-
+import { buildWhatsAppLink } from "../../../utils/whatsapp";
 import "./Hero.css";
 
 const pizzas = [
-  {
-    name: "Marguerita",
-    image: imgMarguerita,
-    glow: "rgba(76, 175, 80, 0.25)",
-  },
-  {
-    name: "Calabresa Acebolada",
-    image: imgCalabresa,
-    glow: "rgba(183, 28, 28, 0.25)",
-  },
-  {
-    name: "Quatro Queijos",
-    image: imgQuatroQueijos,
-    glow: "rgba(255, 193, 7, 0.3)",
-  },
-  {
-    name: "Pepperoni",
-    image: imgPepperoni,
-    glow: "rgba(230, 74, 25, 0.25)",
-  },
-  {
-    name: "Frango com Catupiry",
-    image: imgFrangoCatupiry,
-    glow: "rgba(255, 235, 59, 0.2)",
-  },
-  {
-    name: "Sensação",
-    image: imgSensacao,
-    glow: "rgba(211, 47, 47, 0.25)",
-  },
+  { name: "Marguerita", image: imgMarguerita },
+  { name: "Calabresa", image: imgCalabresa },
+  { name: "Quatro queijos", image: imgQuatroQueijos },
+  { name: "Pepperoni", image: imgPepperoni },
+  { name: "Frango com catupiry", image: imgFrango },
+  { name: "Sensação", image: imgSensacao },
 ];
 
-/* ---------- animações do Framer Motion ---------- */
-
-const slideVariants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 500 : -500,
-    rotateY: direction > 0 ? 35 : -35,
-    scale: 0.5,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    rotateY: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 180,
-      damping: 24,
-      mass: 1,
-    },
-  },
-  exit: (direction) => ({
-    x: direction > 0 ? -500 : 500,
-    rotateY: direction > 0 ? -35 : 35,
-    scale: 0.5,
-    opacity: 0,
-    transition: {
-      type: "spring",
-      stiffness: 180,
-      damping: 24,
-    },
-  }),
-};
-
-const floatAnimation = {
-  y: [0, -18, 0],
-  rotateZ: [-1.5, 1.5, -1.5],
-  transition: {
-    duration: 4.5,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-};
-
-const textVariants = {
-  enter: { opacity: 0, y: 20 },
-  center: {
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.15, duration: 0.4, ease: "easeOut" },
-  },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: { duration: 0.2 },
-  },
-};
-
-/* ========================================
-   HERO COMPONENT
-======================================== */
-
-const AUTOPLAY_INTERVAL = 5000;
-
 function Hero() {
-  const [[current, direction], setCurrent] = useState([0, 0]);
-  const isPaused = useRef(false);
-  const timerRef = useRef(null);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const paginate = useCallback((dir) => {
-    setCurrent(([prev]) => {
-      const next = (prev + dir + pizzas.length) % pizzas.length;
-      return [next, dir];
-    });
-  }, []);
-
-  /* ---------- autoplay ---------- */
   useEffect(() => {
-    const startTimer = () => {
-      clearInterval(timerRef.current);
-      timerRef.current = setInterval(() => {
-        if (!isPaused.current) {
-          paginate(1);
-        }
-      }, AUTOPLAY_INTERVAL);
-    };
+    if (paused) return undefined;
+    const timer = window.setInterval(
+      () => setCurrent((index) => (index + 1) % pizzas.length),
+      5500,
+    );
+    return () => window.clearInterval(timer);
+  }, [paused]);
 
-    startTimer();
-    return () => clearInterval(timerRef.current);
-  }, [paginate]);
-
-  const handleMouseEnter = () => {
-    isPaused.current = true;
-  };
-  const handleMouseLeave = () => {
-    isPaused.current = false;
+  const changePizza = (step) => {
+    setCurrent((index) => (index + step + pizzas.length) % pizzas.length);
   };
 
   const pizza = pizzas[current];
 
   return (
     <section className="hero" id="inicio">
-      <AnimatedGradient />
+      <div className="hero-container">
+        <div className="hero-copy">
+          <span className="hero-kicker">
+            <FaMapMarkerAlt aria-hidden="true" />
+            Londrina e região
+          </span>
 
-      <div className="hero-overlay" />
+          <h1>
+            Pizza saindo do forno.
+            <span>A festa não para.</span>
+          </h1>
 
-      <div className="hero-content">
+          <p className="hero-description">
+            Levamos forno, equipe e um rodízio artesanal completo até o seu evento.
+            Você recebe seus convidados; a Gama cuida do resto.
+          </p>
 
-        {/* carrossel 3D */}
+          <div className="hero-actions">
+            <a href="#rodizios" className="button-primary">
+              Ver cardápios
+              <FaArrowDown aria-hidden="true" />
+            </a>
+            <a
+              href={buildWhatsAppLink(
+                "Olá! Gostaria de consultar uma data para meu evento com a Gama Pizzas.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-secondary"
+            >
+              <FaWhatsapp aria-hidden="true" />
+              Consultar data
+            </a>
+          </div>
+
+          <dl className="hero-proof" aria-label="Números da Gama Pizzas">
+            <div>
+              <dt>500+</dt>
+              <dd>eventos realizados</dd>
+            </div>
+            <div>
+              <dt>30</dt>
+              <dd>sabores no cardápio</dd>
+            </div>
+            <div>
+              <dt>100%</dt>
+              <dd>preparo no local</dd>
+            </div>
+          </dl>
+        </div>
+
         <div
-          className="pizza-carousel"
-          style={{ perspective: "1200px" }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className="hero-showcase"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
         >
-          <button
-            className="carousel-arrow left"
-            onClick={() => paginate(-1)}
-            aria-label="Pizza anterior"
-          >
-            <FaChevronLeft />
-          </button>
-
-          <div className="pizza-stage">
-            <AnimatePresence custom={direction} mode="wait">
-              <motion.div
-                key={current}
-                className="pizza-3d-wrapper"
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <motion.div
-                  className="pizza-float-container"
-                  animate={floatAnimation}
-                >
-                  <img
-                    src={pizza.image}
-                    alt={pizza.name}
-                    className="pizza-image-3d"
-                    draggable={false}
-                  />
-                  {/* sombra elíptica projetada abaixo da pizza */}
-                  <div className="pizza-shadow-3d" />
-                </motion.div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* glow ambiente sob a pizza */}
-            <div
-              className="pizza-glow"
-              style={{
-                background: `radial-gradient(ellipse, ${pizza.glow} 0%, transparent 70%)`,
-              }}
+          <div className="hero-image-shell" aria-live="polite">
+            <img
+              key={pizza.name}
+              src={pizza.image}
+              alt={`Pizza ${pizza.name} da Gama Pizzas`}
+              className="hero-pizza-image"
+              draggable="false"
             />
           </div>
 
-          <button
-            className="carousel-arrow right"
-            onClick={() => paginate(1)}
-            aria-label="Próxima pizza"
-          >
-            <FaChevronRight />
-          </button>
-        </div>
+          <div className="hero-showcase-copy">
+            <span>Agora no forno</span>
+            <h2>{pizza.name}</h2>
+          </div>
 
-        {/* nome do sabor */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            className="pizza-info"
-            variants={textVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-          >
-            <h2 className="pizza-name">{pizza.name}</h2>
-          </motion.div>
-        </AnimatePresence>
+          <div className="hero-pagination" aria-label="Escolher sabor em destaque">
+            {pizzas.map((item, index) => (
+              <button
+                type="button"
+                key={item.name}
+                className={index === current ? "active" : ""}
+                onClick={() => setCurrent(index)}
+                aria-label={`Mostrar pizza ${item.name}`}
+                aria-current={index === current ? "true" : undefined}
+              />
+            ))}
+          </div>
 
-        {/* CTA */}
-        <div className="hero-actions">
-          <a href="#rodizios" className="hero-button primary">
-            Conhecer Rodízios
-          </a>
+          <div className="hero-controls">
+            <button type="button" onClick={() => changePizza(-1)} aria-label="Sabor anterior">
+              <FaChevronLeft />
+            </button>
+            <span>{String(current + 1).padStart(2, "0")}</span>
+            <button type="button" onClick={() => changePizza(1)} aria-label="Próximo sabor">
+              <FaChevronRight />
+            </button>
+          </div>
         </div>
       </div>
+
+      <a href="#historia" className="hero-scroll-cue" aria-label="Conhecer a Gama Pizzas">
+        <span>Conheça a Gama</span>
+        <FaArrowDown />
+      </a>
     </section>
   );
 }

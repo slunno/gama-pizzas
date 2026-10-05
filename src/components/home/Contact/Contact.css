@@ -1,259 +1,185 @@
-/* =====================================================
-   CONTATO - GAMA PIZZAS (Redesign Moderno & Conversão)
-===================================================== */
-
 .contact {
-  padding: 120px 0;
-  background: #0d1024;
-  color: white;
-  position: relative;
+  padding: var(--section-space) 0;
+  color: var(--text-inverse);
+  background: var(--paper);
 }
 
 .contact-container {
-  width: min(92%, 1200px);
-  margin: auto;
   display: grid;
-  grid-template-columns: 1.25fr 0.85fr;
-  gap: 70px;
+  width: min(calc(100% - 2.5rem), var(--container));
   align-items: center;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5.5rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(242, 140, 56, 0.18), transparent 29%),
+    var(--ink-soft);
+  box-shadow: var(--shadow-dark);
 }
 
-/* =====================================================
-   COLUNA ESQUERDA
-===================================================== */
-
-.contact-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(242, 140, 56, 0.12);
-  color: var(--primary-color);
-  border: 1px solid rgba(242, 140, 56, 0.3);
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
+.contact .contact-badge {
+  color: var(--orange-bright);
 }
 
 .contact-content h2 {
-  font-size: 42px;
-  line-height: 1.25;
-  font-weight: 800;
-  margin-bottom: 18px;
-  color: white;
+  max-width: 700px;
+  font-size: clamp(2.4rem, 4.8vw, 4.8rem);
 }
 
 .contact-desc {
-  color: #cfd3e6;
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 30px;
+  max-width: 650px;
+  margin-top: 1.2rem;
+  color: var(--text-inverse-muted);
+  line-height: 1.75;
 }
 
-/* PASSOS RÁPIDOS */
 .booking-steps {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 40px;
-  background: rgba(21, 26, 53, 0.6);
-  padding: 16px 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.7rem;
 }
 
 .step-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #e5e8f5;
-  font-weight: 600;
+  gap: 0.55rem;
+  color: rgba(255, 250, 243, 0.84);
+  font-size: 0.68rem;
+  font-weight: 700;
 }
 
 .step-num {
-  width: 24px;
-  height: 24px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(242, 140, 56, 0.5);
   border-radius: 50%;
-  background: var(--primary-color);
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
+  color: var(--orange-bright);
+  font-size: 0.62rem;
 }
 
 .step-arrow {
-  color: var(--primary-color);
-  font-weight: 800;
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.28);
 }
 
-/* BOTÕES DE AÇÃO */
 .contact-buttons {
   display: flex;
-  gap: 16px;
   flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 2rem;
 }
 
 .contact-whatsapp,
 .contact-instagram {
   display: inline-flex;
+  min-height: 49px;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 15px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  gap: 0.55rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
 
 .contact-whatsapp {
-  background: #25d366;
-  color: white;
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
-}
-
-.contact-whatsapp:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+  color: #07170d;
+  background: var(--success);
 }
 
 .contact-instagram {
-  background: rgba(21, 26, 53, 0.8);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--line-inverse);
+  color: var(--text-inverse);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-whatsapp:hover,
+.contact-instagram:hover {
+  transform: translateY(-2px);
 }
 
 .contact-instagram:hover {
-  background: rgba(21, 26, 53, 1);
-  border-color: #e1306c;
-  color: #e1306c;
-  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* =====================================================
-   COLUNA DIREITA (CARDS DE INFORMAÇÃO)
-===================================================== */
-
 .contact-info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+  display: grid;
+  gap: 0.85rem;
 }
 
 .info-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  padding: 28px;
-  border-radius: 20px;
-  background: rgba(21, 26, 53, 0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  border-color: rgba(242, 140, 56, 0.35);
-  background: rgba(21, 26, 53, 0.95);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  display: grid;
+  align-items: start;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.3rem;
+  border: 1px solid var(--line-inverse);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .info-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(242, 140, 56, 0.12);
-  border: 1px solid rgba(242, 140, 56, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 22px;
-  flex-shrink: 0;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--orange);
+  background: rgba(242, 140, 56, 0.1);
 }
 
 .info-details h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 8px;
+  font-size: 0.95rem;
 }
 
 .info-details p {
-  color: #cfd3e6;
-  font-size: 14.5px;
-  margin: 0 0 6px;
+  margin-top: 0.3rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.76rem;
 }
 
-.info-details p a {
-  color: #cfd3e6;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.info-details p a:hover {
-  color: var(--primary-color);
+.info-details a:hover {
+  color: var(--orange-bright);
 }
 
 .info-status {
   display: inline-block;
-  font-size: 12px;
-  color: #4ade80;
-  font-weight: 600;
-  margin-top: 4px;
+  margin-top: 0.5rem;
+  color: #7bdf97;
+  font-size: 0.62rem;
+  font-weight: 700;
 }
 
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .contact-content h2 {
-    font-size: 34px;
   }
 }
 
-@media (max-width: 600px) {
-  .contact {
-    padding: 80px 0;
-  }
-
-  .contact-content h2 {
-    font-size: 28px;
-  }
-
-  .contact-buttons {
-    flex-direction: column;
-  }
-
-  .contact-whatsapp,
-  .contact-instagram {
-    width: 100%;
-  }
-
-  .booking-steps {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+@media (max-width: 620px) {
+  .contact-container {
+    width: min(calc(100% - 2rem), var(--container));
+    padding: 2rem 1.3rem;
+    border-radius: var(--radius-md);
   }
 
   .step-arrow {
     display: none;
+  }
+
+  .booking-steps {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-buttons {
+    display: grid;
   }
 }

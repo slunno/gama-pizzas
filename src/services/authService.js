@@ -1,7 +1,5 @@
-import { api } from "../config";
-
 const authService = {
-    login(credentials) {
+    login(_credentials) {
         // TODO
     },
 

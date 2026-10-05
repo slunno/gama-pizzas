@@ -1,5 +1,3 @@
-import { api } from "../config";
-
 const trackingService = {
     registerVisit() {
         // TODO: implementar quando o backend estiver pronto
@@ -9,7 +7,7 @@ const trackingService = {
         // TODO: implementar quando o backend estiver pronto
     },
 
-    getSummary(filters) {
+    getSummary(_filters) {
         // TODO: implementar quando o backend estiver pronto
     },
 };

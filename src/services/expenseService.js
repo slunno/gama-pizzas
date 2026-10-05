@@ -1,23 +1,21 @@
-import { api } from "../config";
-
 const expenseService = {
     getAll() {
         // TODO
     },
 
-    getById(id) {
+    getById(_id) {
         // TODO
     },
 
-    create(data) {
+    create(_data) {
         // TODO
     },
 
-    update(id, data) {
+    update(_id, _data) {
         // TODO
     },
 
-    remove(id) {
+    remove(_id) {
         // TODO
     },
 };

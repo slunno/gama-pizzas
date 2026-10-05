@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { flavors } from "../../../data/FlavorsData";
 import "./Rodizios.css";
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
 import {
+  FaChevronLeft,
+  FaChevronRight,
   FaPizzaSlice,
   FaHamburger,
   FaUsers,
@@ -109,6 +111,67 @@ const menus = [
 function Rodizios() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedMenu, setSelectedMenu] = useState("menu2");
+  const carouselRef = useRef(null);
+  const [carouselState, setCarouselState] = useState({
+    canGoBack: false,
+    canGoForward: true,
+    progress: 0,
+  });
+
+  const updateCarouselState = useCallback(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    const progress = maxScroll > 0 ? carousel.scrollLeft / maxScroll : 0;
+    const nextState = {
+      canGoBack: carousel.scrollLeft > 4,
+      canGoForward: carousel.scrollLeft < maxScroll - 4,
+      progress: Math.min(1, Math.max(0, progress)),
+    };
+
+    setCarouselState((currentState) => {
+      const hasChanged =
+        currentState.canGoBack !== nextState.canGoBack ||
+        currentState.canGoForward !== nextState.canGoForward ||
+        Math.abs(currentState.progress - nextState.progress) > 0.005;
+
+      return hasChanged ? nextState : currentState;
+    });
+  }, []);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return undefined;
+
+    const frame = window.requestAnimationFrame(updateCarouselState);
+    const resizeObserver = new ResizeObserver(updateCarouselState);
+    resizeObserver.observe(carousel);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+    };
+  }, [updateCarouselState]);
+
+  const scrollFormats = (direction) => {
+    const carousel = carouselRef.current;
+    const firstCard = carousel?.querySelector(".menu-card");
+    if (!carousel || !firstCard) return;
+
+    const gap = Number.parseFloat(window.getComputedStyle(carousel).gap) || 0;
+    carousel.scrollBy({
+      left: direction * (firstCard.offsetWidth + gap),
+      behavior: "smooth",
+    });
+  };
+
+  const handleCarouselKeyDown = (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+    event.preventDefault();
+    scrollFormats(event.key === "ArrowRight" ? 1 : -1);
+  };
 
   const currentMenu = flavors[selectedMenu] || flavors.menu2;
 
@@ -137,63 +200,106 @@ function Rodizios() {
           </p>
         </div>
 
-        {/* GRID DOS PACOTES */}
-        <div className="menu-grid">
-          {menus.map((menu) => (
-            <div
-              className={`menu-card ${menu.highlight ? "highlight" : ""}`}
-              key={menu.id}
-              data-aos="fade-up"
-            >
-              {menu.tag && (
-                <div className="badge">
-                  {menu.highlight && <FaStar />} {menu.tag}
-                </div>
-              )}
+        {/* CARROSSEL DOS PACOTES */}
+        <div className="menu-carousel">
+          <div className="menu-carousel-toolbar">
+            <p className="menu-carousel-hint">
+              <strong>{menus.length} formatos</strong>
+              <span>Deslize ou use as setas para comparar</span>
+            </p>
 
-              <div className="menu-icon">{menu.icon}</div>
-
-              <div className="menu-titles">
-                <h3>{menu.title}</h3>
-                <span className="menu-subtitle">{menu.subtitle}</span>
-              </div>
-
-              <div className="price">
-                <span className="currency">R$</span>
-                <span className="amount">{menu.price}</span>
-                <small>,00 / adulto</small>
-              </div>
-
-              <div className="child-price">
-                <FaChild /> Criança: <strong>R$ {menu.child},00</strong> (até 5 anos não paga)
-              </div>
-
-              <div className="features-list">
-                {menu.features.map((feat, i) => (
-                  <div className="feature-row" key={i}>
-                    <FaCheck className="check-icon" />
-                    <span>{feat}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="minimum-info">
-                <FaUsers />
-                <span>{menu.minimum}</span>
-              </div>
-
-              <a
-                href={buildWhatsAppLink(
-                  `Olá! Gostaria de consultar a disponibilidade do ${menu.title} (${menu.subtitle}) para o meu evento.`
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="menu-card-button"
+            <div className="menu-carousel-controls" aria-label="Controles do carrossel">
+              <button
+                type="button"
+                aria-label="Ver formato anterior"
+                aria-controls="formatos-carousel"
+                disabled={!carouselState.canGoBack}
+                onClick={() => scrollFormats(-1)}
               >
-                <FaWhatsapp /> Solicitar Orçamento
-              </a>
+                <FaChevronLeft />
+              </button>
+              <button
+                type="button"
+                aria-label="Ver próximo formato"
+                aria-controls="formatos-carousel"
+                disabled={!carouselState.canGoForward}
+                onClick={() => scrollFormats(1)}
+              >
+                <FaChevronRight />
+              </button>
             </div>
-          ))}
+          </div>
+
+          <div
+            className="menu-track"
+            id="formatos-carousel"
+            ref={carouselRef}
+            role="region"
+            aria-label="Formatos disponíveis para eventos"
+            tabIndex="0"
+            onScroll={updateCarouselState}
+            onKeyDown={handleCarouselKeyDown}
+          >
+            {menus.map((menu) => (
+              <article
+                className={`menu-card ${menu.highlight ? "highlight" : ""}`}
+                key={menu.id}
+                data-aos="fade-up"
+              >
+                {menu.tag && (
+                  <div className="badge">
+                    {menu.highlight && <FaStar />} {menu.tag}
+                  </div>
+                )}
+
+                <div className="menu-icon">{menu.icon}</div>
+
+                <div className="menu-titles">
+                  <h3>{menu.title}</h3>
+                  <span className="menu-subtitle">{menu.subtitle}</span>
+                </div>
+
+                <div className="price">
+                  <span className="currency">R$</span>
+                  <span className="amount">{menu.price}</span>
+                  <small>,00 / adulto</small>
+                </div>
+
+                <div className="child-price">
+                  <FaChild /> Criança: <strong>R$ {menu.child},00</strong> (até 5 anos não paga)
+                </div>
+
+                <div className="features-list">
+                  {menu.features.map((feat, i) => (
+                    <div className="feature-row" key={i}>
+                      <FaCheck className="check-icon" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="minimum-info">
+                  <FaUsers />
+                  <span>{menu.minimum}</span>
+                </div>
+
+                <a
+                  href={buildWhatsAppLink(
+                    `Olá! Gostaria de consultar a disponibilidade do ${menu.title} (${menu.subtitle}) para o meu evento.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="menu-card-button"
+                >
+                  <FaWhatsapp /> Solicitar Orçamento
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <div className="menu-carousel-progress" aria-hidden="true">
+            <span style={{ width: `${12 + carouselState.progress * 88}%` }} />
+          </div>
         </div>
 
         {/* SEÇÃO DE SABORES INTERATIVA */}

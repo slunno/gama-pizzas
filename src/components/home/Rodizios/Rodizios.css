@@ -1,434 +1,462 @@
-/* =====================================================
-   RODÍZIOS PREMIUM - GAMA PIZZAS (Redesign Moderno)
-===================================================== */
-
 .rodizios {
-  padding: 120px 0;
-  background: #0d1024;
-  color: white;
-  position: relative;
+  padding: var(--section-space) 0;
+  color: var(--text-inverse);
+  background: var(--ink-soft);
 }
 
 .rodizios-container {
-  width: min(92%, 1240px);
-  margin: auto;
+  width: min(calc(100% - 2.5rem), var(--container));
+  margin: 0 auto;
 }
-
-/* =====================================================
-   CABEÇALHOS
-===================================================== */
 
 .section-header,
 .flavors-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 60px;
-}
-
-.rodizios-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(242, 140, 56, 0.12);
-  color: var(--primary-color);
-  border: 1px solid rgba(242, 140, 56, 0.3);
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  max-width: 780px;
 }
 
 .section-header h2,
-.flavors-header h2 {
-  font-size: 42px;
-  line-height: 1.25;
+.flavors-header h2,
+.gallery-header h2,
+.faq-accordion-wrapper h2,
+.contact-content h2 {
+  margin-top: 1.15rem;
+  font-size: clamp(2.35rem, 4.8vw, 4.6rem);
   font-weight: 800;
-  margin-bottom: 18px;
-  color: #ffffff;
-}
-
-.section-header p,
-.flavors-header p {
-  color: #cfd3e6;
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-/* =====================================================
-   GRID DOS CARDS DE PACOTES
-===================================================== */
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  align-items: stretch;
-}
-
-/* =====================================================
-   CARD INDIVIDUAL
-===================================================== */
-
-.menu-card {
-  position: relative;
-  background: rgba(21, 26, 53, 0.65);
-  backdrop-filter: blur(14px);
-  border-radius: 24px;
-  padding: 36px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-.menu-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(242, 140, 56, 0.4);
-  background: rgba(21, 26, 53, 0.95);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-}
-
-/* CARD DESTAQUE */
-.menu-card.highlight {
-  border: 2px solid var(--primary-color);
-  background: linear-gradient(
-    170deg,
-    rgba(242, 140, 56, 0.12) 0%,
-    rgba(21, 26, 53, 0.9) 100%
-  );
-  box-shadow: 0 0 30px rgba(242, 140, 56, 0.25), 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.menu-card.highlight:hover {
-  box-shadow: 0 0 45px rgba(242, 140, 56, 0.45), 0 25px 60px rgba(0, 0, 0, 0.5);
-}
-
-/* BADGE NO TOPO */
-.badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: var(--primary-color);
-  color: #111;
-  padding: 6px 14px;
-  border-radius: 50px;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  box-shadow: 0 4px 15px rgba(242, 140, 56, 0.5);
-}
-
-/* ÍCONE */
-.menu-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
-  background: rgba(242, 140, 56, 0.12);
-  border: 1px solid rgba(242, 140, 56, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 26px;
-  margin-bottom: 22px;
-}
-
-/* TÍTULOS */
-.menu-titles {
-  margin-bottom: 18px;
-}
-
-.menu-card h3 {
-  font-size: 24px;
-  font-weight: 800;
-  color: white;
-  margin: 0 0 6px;
-}
-
-.menu-subtitle {
-  font-size: 13px;
-  color: #a0a6c2;
-  font-weight: 500;
-}
-
-/* PREÇO */
-.price {
-  display: flex;
-  align-items: baseline;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.price .currency {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-right: 4px;
-}
-
-.price .amount {
-  font-family: var(--font-display);
-  font-size: 52px;
-  font-weight: 800;
-  color: var(--primary-color);
   line-height: 1;
 }
 
+.section-header > p {
+  max-width: 690px;
+  margin-top: 1.25rem;
+  color: var(--text-inverse-muted);
+  line-height: 1.75;
+}
+
+.rodizios .rodizios-badge {
+  color: var(--orange-bright);
+}
+
+.menu-carousel {
+  margin-top: 3.5rem;
+}
+
+.menu-carousel-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-carousel-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  color: var(--text-inverse-muted);
+  font-size: 0.78rem;
+}
+
+.menu-carousel-hint strong {
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-carousel-hint span {
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--line-inverse);
+}
+
+.menu-carousel-controls {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.55rem;
+}
+
+.menu-carousel-controls button {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(242, 140, 56, 0.58);
+  border-radius: 50%;
+  color: var(--orange-bright);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition),
+    background var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.menu-carousel-controls button:hover:not(:disabled) {
+  border-color: var(--orange);
+  color: var(--ink);
+  background: var(--orange);
+  transform: translateY(-2px);
+}
+
+.menu-carousel-controls button:focus-visible,
+.menu-track:focus-visible {
+  outline: 2px solid var(--orange-bright);
+  outline-offset: 3px;
+}
+
+.menu-carousel-controls button:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.menu-track {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.2rem 0.15rem 1rem;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 0.15rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-track::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 calc((100% - 2rem) / 3);
+  min-height: 100%;
+  flex-direction: column;
+  padding: 1.7rem;
+  border: 1px solid var(--line-inverse);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.menu-card:hover {
+  border-color: rgba(242, 140, 56, 0.45);
+  background: rgba(255, 255, 255, 0.045);
+  transform: translateY(-4px);
+}
+
+.menu-card.highlight {
+  border-color: rgba(242, 140, 56, 0.7);
+  background: linear-gradient(180deg, rgba(242, 140, 56, 0.1), rgba(255, 255, 255, 0.025) 38%);
+}
+
+.menu-carousel-progress {
+  height: 2px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-carousel-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--orange), var(--orange-bright));
+  transition: width 180ms ease-out;
+}
+
+.rodizios .badge {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  color: var(--orange-bright);
+  background: rgba(242, 140, 56, 0.11);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(242, 140, 56, 0.32);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 1rem;
+}
+
+.menu-titles {
+  margin-top: 1.6rem;
+}
+
+.menu-titles h3 {
+  font-size: 1.35rem;
+}
+
+.menu-subtitle {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.price {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.45rem;
+  color: var(--text-inverse);
+}
+
+.price .currency {
+  margin-top: 0.35rem;
+  color: var(--orange-bright);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.price .amount {
+  margin-left: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
 .price small {
-  font-size: 14px;
-  color: #bbb;
-  margin-left: 6px;
+  align-self: flex-end;
+  margin: 0 0 0.35rem 0.2rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.62rem;
 }
 
 .child-price {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #cfd3e6;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 8px 12px;
-  border-radius: 10px;
-  margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.65rem;
 }
 
 .child-price svg {
-  color: var(--primary-color);
+  color: var(--orange);
 }
 
-/* LISTA DE BENEFÍCIOS / FEATURES */
 .features-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 20px;
+  display: grid;
+  gap: 0.72rem;
+  margin: 1.45rem 0;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--line-inverse);
+  border-bottom: 1px solid var(--line-inverse);
 }
 
 .feature-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: #d8dcee;
+  display: grid;
+  align-items: start;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  color: rgba(255, 250, 243, 0.82);
+  font-size: 0.72rem;
   line-height: 1.5;
 }
 
 .check-icon {
-  color: var(--primary-color);
-  margin-top: 3px;
-  flex-shrink: 0;
-  font-size: 13px;
+  margin-top: 0.2rem;
+  color: var(--orange);
+  font-size: 0.65rem;
 }
 
-/* INFO MÍNIMO */
 .minimum-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #a0a6c2;
-  margin-bottom: 24px;
-  padding-top: 12px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
 }
 
-.minimum-info svg {
-  color: var(--primary-color);
-}
-
-/* BOTÃO DE ORÇAMENTO NO CARD */
 .menu-card-button {
-  display: flex;
+  display: inline-flex;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 20px;
-  border-radius: 50px;
-  background: rgba(242, 140, 56, 0.12);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  gap: 0.55rem;
+  margin-top: auto;
+  border: 1px solid rgba(242, 140, 56, 0.65);
+  border-radius: 999px;
+  color: var(--text-inverse);
+  font-size: 0.72rem;
+  font-weight: 800;
+  transition: color var(--transition), background var(--transition);
 }
 
-.menu-card.highlight .menu-card-button,
 .menu-card-button:hover {
-  background: var(--primary-color);
-  color: #111;
-  box-shadow: 0 4px 25px rgba(242, 140, 56, 0.5);
-  transform: translateY(-2px);
+  color: var(--ink);
+  background: var(--orange);
 }
-
-/* =====================================================
-   SEÇÃO DE SABORES INTERATIVA
-===================================================== */
 
 .flavors-section {
-  margin-top: 130px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 100px;
+  margin-top: 6rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border-radius: var(--radius-lg);
+  color: var(--text);
+  background: var(--cream);
 }
 
-.menu-selector-tabs {
+.flavors-section .rodizios-badge {
+  color: var(--orange-deep);
+}
+
+.flavors-header h2 {
+  font-size: clamp(2.1rem, 4vw, 3.7rem);
+}
+
+.flavors-header > p {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.menu-selector-tabs,
+.flavor-category-pills {
   display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 30px;
   flex-wrap: wrap;
-}
-
-.menu-tab {
-  padding: 12px 24px;
-  border-radius: 50px;
-  background: rgba(21, 26, 53, 0.8);
-  color: #cfd3e6;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.menu-tab.active {
-  background: var(--primary-color);
-  color: #111;
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 20px rgba(242, 140, 56, 0.4);
+  gap: 0.55rem;
+  margin-top: 1.7rem;
 }
 
 .flavor-category-pills {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  margin-top: 0.7rem;
 }
 
+.menu-tab,
 .pill-btn {
-  padding: 8px 18px;
-  border-radius: 50px;
-  background: transparent;
-  color: #a0a6c2;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  min-height: 42px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 0.68rem;
+  font-weight: 800;
+  transition: all var(--transition);
 }
 
-.pill-btn:hover {
-  color: white;
-  border-color: rgba(242, 140, 56, 0.5);
-}
-
+.menu-tab:hover,
+.pill-btn:hover,
+.menu-tab.active,
 .pill-btn.active {
-  background: rgba(242, 140, 56, 0.15);
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  border-color: var(--ink);
+  color: var(--text-inverse);
+  background: var(--ink);
 }
 
 .flavors-container-box {
-  background: rgba(21, 26, 53, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 40px;
-  margin-top: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-.flavors-group {
-  margin-bottom: 35px;
-}
-
-.flavors-group:last-child {
-  margin-bottom: 0;
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
 }
 
 .flavors-group h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .chip {
-  background: rgba(255, 255, 255, 0.06);
-  color: #e5e8f5;
-  padding: 9px 18px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s ease;
-}
-
-.chip:hover {
-  background: var(--primary-color);
-  color: #111;
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(242, 140, 56, 0.35);
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  background: var(--paper);
+  font-size: 0.68rem;
+  font-weight: 700;
 }
 
 .chip.sweet {
-  border-color: rgba(230, 81, 0, 0.25);
+  border-color: rgba(216, 108, 36, 0.2);
+  color: #8d3f22;
+  background: #fff3e7;
 }
 
-.chip.sweet:hover {
-  background: #ff7043;
-  color: #fff;
-  border-color: #ff7043;
-}
-
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-@media (max-width: 1100px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 980px) {
+  .menu-card {
+    flex-basis: calc((100% - 1rem) / 2);
   }
 }
 
-@media (max-width: 768px) {
-  .rodizios {
-    padding: 80px 0;
+@media (max-width: 660px) {
+  .rodizios-container {
+    width: min(calc(100% - 2rem), var(--container));
   }
 
-  .menu-grid {
+  .menu-carousel {
+    margin-top: 2.75rem;
+  }
+
+  .menu-carousel-toolbar {
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .menu-carousel-hint {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .menu-carousel-hint span {
+    padding-left: 0;
+    border-left: 0;
+    font-size: 0.7rem;
+  }
+
+  .menu-carousel-controls button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .menu-track {
+    margin-right: -1rem;
+    padding-right: 1rem;
+  }
+
+  .menu-card {
+    flex-basis: calc(100% - 1.25rem);
+  }
+
+  .flavors-section {
+    margin-top: 4rem;
+    border-radius: var(--radius-md);
+  }
+
+  .menu-selector-tabs,
+  .flavor-category-pills {
+    display: grid;
     grid-template-columns: 1fr;
-  }
-
-  .section-header h2,
-  .flavors-header h2 {
-    font-size: 30px;
-  }
-
-  .flavors-container-box {
-    padding: 24px;
-  }
-
-  .price .amount {
-    font-size: 42px;
   }
 }

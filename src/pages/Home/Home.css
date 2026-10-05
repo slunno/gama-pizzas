@@ -1,14 +1,10 @@
 .home {
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .home section {
   width: 100%;
   position: relative;
-}
-
-html {
-  scroll-behavior: smooth;
 }

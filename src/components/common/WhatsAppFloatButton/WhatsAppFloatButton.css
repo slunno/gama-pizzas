@@ -1,159 +1,38 @@
-/* =====================================================
-   WhatsApp Float Button
-   ===================================================== */
-
 .whatsapp-float-button {
   position: fixed;
-
-  bottom: 24px;
-  right: 24px;
-
-  width: 64px;
-  height: 64px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #25d366;
-  color: #ffffff;
-
+  z-index: 999;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 3px solid rgba(255, 255, 255, 0.88);
   border-radius: 50%;
-  text-decoration: none;
-
-  font-size: 2rem;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
-  cursor: pointer;
-
-  z-index: 9999;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  color: #fff;
+  background: var(--success);
+  box-shadow: 0 12px 34px rgba(7, 24, 13, 0.32);
+  font-size: 1.55rem;
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
 }
-
-/* Hover */
 
 .whatsapp-float-button:hover {
-  transform: scale(1.08);
-
-  background-color: #22c55e;
-
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(7, 24, 13, 0.4);
+  transform: translateY(-3px);
 }
 
-/* Clique */
-
-.whatsapp-float-button:active {
-  transform: scale(0.95);
-}
-
-/* Acessibilidade */
-
-.whatsapp-float-button:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 4px;
-}
-
-/* Animação ao carregar */
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.whatsapp-float-button {
-  animation: floatIn 0.5s ease;
-}
-
-/* Efeito respirando */
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.06);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.whatsapp-float-button:not(:hover) {
-  animation:
-    floatIn 0.5s ease,
-    pulse 2.5s ease-in-out infinite;
-}
-
-/* =====================================================
-   Estado oculto (seção de Contato visível na tela)
-   ===================================================== */
-
-.whatsapp-float-button.whatsapp-float-button--hidden {
+.whatsapp-float-button--hidden {
   opacity: 0;
-
-  transform: translateY(24px) scale(0.85);
-
   pointer-events: none;
-
-  animation: none;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+  transform: translateY(14px);
 }
 
-/* Movimento reduzido: preferências de acessibilidade */
-
-@media (prefers-reduced-motion: reduce) {
-  .whatsapp-float-button,
-  .whatsapp-float-button:not(:hover) {
-    animation: none;
-  }
-
-  .whatsapp-float-button.whatsapp-float-button--hidden {
-    transition: opacity 0.2s ease;
-    transform: none;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
+@media (max-width: 620px) {
   .whatsapp-float-button {
-    width: 56px;
-    height: 56px;
-
-    bottom: 18px;
-    right: 18px;
-
-    font-size: 1.7rem;
-  }
-}
-
-/* Telas muito pequenas */
-
-@media (max-width: 480px) {
-  .whatsapp-float-button {
-    width: 52px;
-    height: 52px;
-
-    bottom: 16px;
-    right: 16px;
-
-    font-size: 1.5rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: 51px;
+    height: 51px;
+    font-size: 1.35rem;
   }
 }

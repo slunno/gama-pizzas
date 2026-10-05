@@ -12,11 +12,11 @@ function Home() {
     <div className="home">
       <Hero />
 
-      <History />
-
       <Rodizios />
 
       <Gallery />
+
+      <History />
 
       <FAQ />
 

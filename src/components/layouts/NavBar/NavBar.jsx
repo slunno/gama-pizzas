@@ -1,95 +1,97 @@
 import { useEffect, useState } from "react";
-
 import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 
 import logo from "../../../assets/images/logo.png";
-
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
-
 import "./NavBar.css";
+
+const navigation = [
+  ["Início", "#inicio"],
+  ["Rodízios", "#rodizios"],
+  ["Registros", "#galeria"],
+  ["A Gama", "#historia"],
+  ["Dúvidas", "#faq"],
+];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 32);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
-
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [menuOpen]);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
       <div className="navbar-container">
-        <a href="#inicio" className="navbar-logo" onClick={closeMenu}>
-          <img src={logo} alt="Gama Pizzas" />
+        <a href="#inicio" className="navbar-brand" onClick={closeMenu} aria-label="Gama Pizzas">
+          <img src={logo} alt="" />
+          <span>
+            <strong>Gama Pizzas</strong>
+            <small>Rodízio para eventos</small>
+          </span>
         </a>
 
-        <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
-          <a href="#inicio" onClick={closeMenu}>
-            Início
-          </a>
+        <nav
+          id="primary-navigation"
+          className={`navbar-menu${menuOpen ? " navbar-menu--open" : ""}`}
+          aria-label="Navegação principal"
+        >
+          {navigation.map(([label, href]) => (
+            <a href={href} onClick={closeMenu} key={href}>
+              {label}
+            </a>
+          ))}
 
-          <a href="#historia" onClick={closeMenu}>
-            História
-          </a>
-
-          <a href="#rodizios" onClick={closeMenu}>
-            Rodízios
-          </a>
-
-          <a href="#galeria" onClick={closeMenu}>
-            Galeria
-          </a>
-
-          <a href="#faq" onClick={closeMenu}>
-            Dúvidas
-          </a>
-
-          <a href="#contato" onClick={closeMenu}>
+          <a href="#contato" className="navbar-menu-contact" onClick={closeMenu}>
             Contato
           </a>
         </nav>
 
         <a
-          href={buildWhatsAppLink("Olá! Gostaria de consultar a disponibilidade da Gama Pizzas para o meu evento.")}
+          href={buildWhatsAppLink(
+            "Olá! Gostaria de consultar uma data para meu evento com a Gama Pizzas.",
+          )}
           target="_blank"
           rel="noopener noreferrer"
-          className="navbar-button"
+          className="navbar-cta"
         >
-          <FaWhatsapp />
-          <span>Orçamento</span>
+          <FaWhatsapp aria-hidden="true" />
+          <span>Consultar data</span>
         </a>
-
-        {menuOpen && <div className="navbar-overlay" onClick={closeMenu} />}
 
         <button
           className="navbar-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menu"
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-controls="primary-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
+
+      {menuOpen && (
+        <button
+          type="button"
+          className="navbar-overlay"
+          onClick={closeMenu}
+          aria-label="Fechar menu"
+        />
+      )}
     </header>
   );
 }

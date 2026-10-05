@@ -1,236 +1,220 @@
-/* =====================================================
-   NAVBAR PREMIUM - GAMA PIZZAS
-===================================================== */
-
 .navbar {
   position: fixed;
-
+  z-index: 1000;
   top: 0;
-
+  right: 0;
   left: 0;
-
-  width: 100%;
-
-  z-index: 3000;
-
-  padding: 15px 0;
-
-  transition: 0.35s ease;
+  padding: 1rem 0;
+  color: var(--text-inverse);
+  transition: padding var(--transition), background var(--transition), border-color var(--transition);
 }
 
-.navbar.scrolled {
-  background: rgba(10, 12, 25, 0.92);
-
-  backdrop-filter: blur(15px);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+.navbar--scrolled {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line-inverse);
+  background: rgba(11, 14, 26, 0.88);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px);
 }
-
-/* CONTAINER */
 
 .navbar-container {
-  width: min(92%, 1200px);
-
-  margin: auto;
-
+  position: relative;
+  z-index: 2;
   display: flex;
-
+  width: min(calc(100% - 2.5rem), var(--container));
+  min-height: 58px;
   align-items: center;
-
   justify-content: space-between;
+  gap: 2rem;
+  margin: 0 auto;
 }
 
-/* LOGO */
-
-.navbar-logo img {
-  width: 100px;
-
-  transition: 0.3s;
+.navbar-brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.navbar-logo:hover img {
-  transform: scale(1.05);
+.navbar-brand img {
+  width: 45px;
+  height: 48px;
+  object-fit: contain;
 }
 
-/* MENU DESKTOP */
+.navbar-brand span {
+  display: grid;
+  line-height: 1.15;
+}
+
+.navbar-brand strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.navbar-brand small {
+  margin-top: 0.2rem;
+  color: var(--text-inverse-muted);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .navbar-menu {
   display: flex;
-
   align-items: center;
-
-  gap: 35px;
+  gap: clamp(1.1rem, 2vw, 2rem);
 }
 
 .navbar-menu a {
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
   position: relative;
+  color: rgba(255, 250, 243, 0.78);
+  font-size: 0.79rem;
+  font-weight: 700;
+  transition: color var(--transition);
 }
 
 .navbar-menu a::after {
-  content: "";
-
   position: absolute;
-
+  right: 0;
+  bottom: -0.5rem;
   left: 0;
-
-  bottom: -8px;
-
-  width: 0;
-
   height: 2px;
+  content: "";
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
 
-  background: var(--primary-color);
-
-  transition: 0.3s;
+.navbar-menu a:hover {
+  color: var(--text-inverse);
 }
 
 .navbar-menu a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
-/* BOTÃO WHATSAPP */
-
-.navbar-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--primary-color);
-  color: #111;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(242, 140, 56, 0.35);
-}
-
-.navbar-button:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(242, 140, 56, 0.55);
-}
-
-/* BOTÃO MOBILE */
-
-.navbar-toggle {
+.navbar-menu-contact {
   display: none;
-
-  background: none;
-
-  border: none;
-
-  color: white;
-
-  font-size: 30px;
-
-  cursor: pointer;
-
-  z-index: 3005;
 }
 
-/* FECHAR MENU */
+.navbar-cta {
+  display: inline-flex;
+  min-height: 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--orange);
+  font-size: 0.76rem;
+  font-weight: 800;
+  transition: transform var(--transition), background var(--transition);
+}
 
-/* OVERLAY */
+.navbar-cta:hover {
+  background: var(--orange-bright);
+  transform: translateY(-2px);
+}
 
+.navbar-toggle,
 .navbar-overlay {
   display: none;
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 992px) {
+@media (max-width: 920px) {
   .navbar-container {
-    width: 90%;
-  }
-
-  .navbar-logo img {
-    width: 70px;
-  }
-
-  .navbar-button {
-    display: none;
-  }
-
-  .navbar-toggle {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    width: min(calc(100% - 2rem), var(--container));
   }
 
   .navbar-menu {
     position: fixed;
-
+    z-index: 4;
     top: 0;
-
-    right: -100%;
-
-    width: 300px;
-
-    max-width: 85%;
-
-    height: 100vh;
-
-    background: #10132b;
-
+    right: 0;
     display: flex;
-
+    width: min(84vw, 360px);
+    height: 100dvh;
+    align-items: flex-start;
     flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 35px;
-
-    transition: 0.35s ease;
-
-    z-index: 3004;
+    gap: 0;
+    padding: 7.5rem 2rem 2rem;
+    border-left: 1px solid var(--line-inverse);
+    background: var(--ink-soft);
+    box-shadow: -28px 0 70px rgba(0, 0, 0, 0.35);
+    transform: translateX(105%);
+    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
-  .navbar-menu.active {
-    right: 0;
+  .navbar-menu--open {
+    transform: translateX(0);
   }
 
   .navbar-menu a {
-    font-size: 22px;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line-inverse);
+    color: var(--text-inverse);
+    font-size: 1rem;
   }
 
-  /* FUNDO ESCURO */
+  .navbar-menu a::after {
+    display: none;
+  }
+
+  .navbar-menu-contact {
+    display: block;
+  }
+
+  .navbar-toggle {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid var(--line-inverse);
+    border-radius: 50%;
+    color: var(--text-inverse);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 1.05rem;
+  }
 
   .navbar-overlay {
-    display: block;
-
     position: fixed;
-
+    z-index: 1;
     inset: 0;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    z-index: 3001;
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    background: rgba(4, 5, 11, 0.68);
+    backdrop-filter: blur(3px);
   }
 }
 
-@media (max-width: 600px) {
-  .navbar-logo img {
-    width: 70px;
+@media (max-width: 620px) {
+  .navbar {
+    padding: 0.65rem 0;
   }
 
-  .navbar-menu {
-    width: 100%;
+  .navbar-brand img {
+    width: 39px;
+    height: 42px;
+  }
 
-    max-width: 100%;
+  .navbar-brand small,
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar-brand strong {
+    font-size: 0.84rem;
   }
 }
