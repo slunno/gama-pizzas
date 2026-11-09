@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaQuestionCircle, FaWhatsapp, FaShieldAlt } from "react-icons/fa";
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
-import pizzaPreview from "../../../assets/images/pizzas/marguerita.jpg";
+import pizzaPreview from "../../../assets/images/pizzas/photographic/marguerita.webp";
 import "./FAQ.css";
 
 const faqData = [
@@ -50,7 +50,14 @@ function FAQ() {
         {/* LADO ESQUERDO: CARD VISUAL INSPIRADO NO MOBIRISE */}
         <div className="faq-visual-card" data-aos="fade-right">
           <div className="faq-img-wrapper">
-            <img src={pizzaPreview} alt="Gama Pizzas Rodízio" className="faq-img" />
+            <img
+              src={pizzaPreview}
+              alt="Pizza Marguerita da Gama Pizzas"
+              className="faq-img"
+              width="1254"
+              height="1254"
+              loading="lazy"
+            />
             <div className="faq-img-badge">
               <FaShieldAlt />
               <span>Transparência Total</span>

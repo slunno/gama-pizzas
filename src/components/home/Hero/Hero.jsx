@@ -7,12 +7,12 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import imgMarguerita from "../../../assets/images/pizzas/marguerita.jpg";
-import imgCalabresa from "../../../assets/images/pizzas/calabresa.jpg";
-import imgQuatroQueijos from "../../../assets/images/pizzas/quatro-queijos.jpg";
-import imgPepperoni from "../../../assets/images/pizzas/pepperoni.jpg";
-import imgFrango from "../../../assets/images/pizzas/frango-catupiry.jpg";
-import imgSensacao from "../../../assets/images/pizzas/sensacao.jpg";
+import imgMarguerita from "../../../assets/images/pizzas/photographic/marguerita.webp";
+import imgCalabresa from "../../../assets/images/pizzas/photographic/calabresa.webp";
+import imgQuatroQueijos from "../../../assets/images/pizzas/photographic/quatro-queijos.webp";
+import imgPepperoni from "../../../assets/images/pizzas/photographic/pepperoni.webp";
+import imgFrango from "../../../assets/images/pizzas/photographic/frango-catupiry.webp";
+import imgSensacao from "../../../assets/images/pizzas/photographic/sensacao.webp";
 import { buildWhatsAppLink } from "../../../utils/whatsapp";
 import "./Hero.css";
 
@@ -108,6 +108,8 @@ function Hero() {
               src={pizza.image}
               alt={`Pizza ${pizza.name} da Gama Pizzas`}
               className="hero-pizza-image"
+              width="1254"
+              height="1254"
               draggable="false"
             />
           </div>
