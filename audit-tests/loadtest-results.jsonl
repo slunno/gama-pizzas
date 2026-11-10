@@ -1,0 +1,3 @@
+{"scenario":"100 VUs","durationSeconds":5,"requests":0,"rps":0,"avgMs":0,"p95Ms":null,"p99Ms":null,"errors":400,"errorRatePct":100,"bytes":0}
+{"scenario":"500 VUs","durationSeconds":5,"requests":0,"rps":0,"avgMs":0,"p95Ms":null,"p99Ms":null,"errors":2000,"errorRatePct":100,"bytes":0}
+{"scenario":"1000 VUs","durationSeconds":5,"requests":0,"rps":0,"avgMs":0,"p95Ms":null,"p99Ms":null,"errors":4000,"errorRatePct":100,"bytes":0}

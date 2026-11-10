@@ -16,12 +16,22 @@ const navigation = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuCollapsed, setIsMenuCollapsed] = useState(() =>
+    window.matchMedia("(max-width: 920px)").matches,
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 32);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 920px)");
+    const handleLayoutChange = (event) => setIsMenuCollapsed(event.matches);
+    mediaQuery.addEventListener("change", handleLayoutChange);
+    return () => mediaQuery.removeEventListener("change", handleLayoutChange);
   }, []);
 
   useEffect(() => {
@@ -36,7 +46,7 @@ function Navbar() {
   return (
     <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
       <div className="navbar-container">
-        <a href="#inicio" className="navbar-brand" onClick={closeMenu} aria-label="Gama Pizzas">
+        <a href="#inicio" className="navbar-brand" onClick={closeMenu}>
           <img src={logo} alt="" />
           <span>
             <strong>Gama Pizzas</strong>
@@ -48,6 +58,7 @@ function Navbar() {
           id="primary-navigation"
           className={`navbar-menu${menuOpen ? " navbar-menu--open" : ""}`}
           aria-label="Navegação principal"
+          inert={!menuOpen && isMenuCollapsed}
         >
           {navigation.map(([label, href]) => (
             <a href={href} onClick={closeMenu} key={href}>

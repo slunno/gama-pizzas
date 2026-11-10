@@ -4,6 +4,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaMapMarkerAlt,
+  FaPause,
+  FaPlay,
   FaWhatsapp,
 } from "react-icons/fa";
 
@@ -27,16 +29,26 @@ const pizzas = [
 
 function Hero() {
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(() =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    if (paused) return undefined;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handlePreferenceChange = (event) => setPaused(event.matches);
+    mediaQuery.addEventListener("change", handlePreferenceChange);
+    return () => mediaQuery.removeEventListener("change", handlePreferenceChange);
+  }, []);
+
+  useEffect(() => {
+    if (paused || hovered) return undefined;
     const timer = window.setInterval(
       () => setCurrent((index) => (index + 1) % pizzas.length),
       5500,
     );
     return () => window.clearInterval(timer);
-  }, [paused]);
+  }, [paused, hovered]);
 
   const changePizza = (step) => {
     setCurrent((index) => (index + step + pizzas.length) % pizzas.length);
@@ -99,8 +111,8 @@ function Hero() {
 
         <div
           className="hero-showcase"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
         >
           <div className="hero-image-shell" aria-live="polite">
             <img
@@ -119,7 +131,7 @@ function Hero() {
             <h2>{pizza.name}</h2>
           </div>
 
-          <div className="hero-pagination" aria-label="Escolher sabor em destaque">
+          <div className="hero-pagination" role="group" aria-label="Escolher sabor em destaque">
             {pizzas.map((item, index) => (
               <button
                 type="button"
@@ -132,7 +144,15 @@ function Hero() {
             ))}
           </div>
 
-          <div className="hero-controls">
+          <div className="hero-controls" role="group" aria-label="Controles do carrossel">
+            <button
+              type="button"
+              onClick={() => setPaused((value) => !value)}
+              aria-label={paused ? "Retomar troca automática" : "Pausar troca automática"}
+              aria-pressed={paused}
+            >
+              {paused ? <FaPlay aria-hidden="true" /> : <FaPause aria-hidden="true" />}
+            </button>
             <button type="button" onClick={() => changePizza(-1)} aria-label="Sabor anterior">
               <FaChevronLeft />
             </button>
@@ -144,7 +164,7 @@ function Hero() {
         </div>
       </div>
 
-      <a href="#historia" className="hero-scroll-cue" aria-label="Conhecer a Gama Pizzas">
+      <a href="#historia" className="hero-scroll-cue">
         <span>Conheça a Gama</span>
         <FaArrowDown />
       </a>

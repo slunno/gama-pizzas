@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gama-pizzas-work.vercel.app/sitemap.xml

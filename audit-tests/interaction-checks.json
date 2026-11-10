@@ -1,0 +1,165 @@
+{
+  "menu": [
+    {
+      "engine": "chromium",
+      "environment": "published",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.973, 0)",
+      "navLeftAfterLink": 406,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "chromium",
+      "environment": "published",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": true,
+      "focusedHref": "#inicio",
+      "focusedLeft": 439,
+      "navHasOpenClass": false
+    },
+    {
+      "engine": "chromium",
+      "environment": "local-build",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.973, 0)",
+      "navLeftAfterLink": 406,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "chromium",
+      "environment": "local-build",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": true,
+      "focusedHref": "#inicio",
+      "focusedLeft": 439,
+      "navHasOpenClass": false
+    },
+    {
+      "engine": "firefox",
+      "environment": "published",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.98, 0)",
+      "navLeftAfterLink": 406,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "firefox",
+      "environment": "published",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": true,
+      "focusedHref": "#inicio",
+      "focusedLeft": 439,
+      "navHasOpenClass": false
+    },
+    {
+      "engine": "firefox",
+      "environment": "local-build",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.98, 0)",
+      "navLeftAfterLink": 406,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "firefox",
+      "environment": "local-build",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": true,
+      "focusedHref": "#inicio",
+      "focusedLeft": 439,
+      "navHasOpenClass": false
+    },
+    {
+      "engine": "webkit",
+      "environment": "published",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.97345, 0)",
+      "navLeftAfterLink": 407,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "webkit",
+      "environment": "published",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": false,
+      "focusedHref": null,
+      "focusedLeft": 330,
+      "navHasOpenClass": false
+    },
+    {
+      "engine": "webkit",
+      "environment": "local-build",
+      "status": 200,
+      "expandedWhenOpen": "true",
+      "expandedAfterLink": "false",
+      "navClassAfterLink": "navbar-menu",
+      "navTransformAfterLink": "matrix(1, 0, 0, 1, 343.97345, 0)",
+      "navLeftAfterLink": 407,
+      "focusedElementInsideClosedNav": false,
+      "focusedElement": "<body style=\"\">\n    <div id=\"root\"><header class=\"navbar navbar--scrolled\"><div class=\"navbar-container\"><a href=\"#inicio\" class=\"navbar-brand\" aria-label=\"Gama",
+      "firstLinkTabIndex": 0,
+      "bodyOverflow": "visible",
+      "hash": "#historia"
+    },
+    {
+      "engine": "webkit",
+      "environment": "local-build",
+      "name": "keyboard-tab-while-closed",
+      "expanded": "false",
+      "firstTabMovesIntoClosedNav": false,
+      "focusedHref": null,
+      "focusedLeft": 330,
+      "navHasOpenClass": false
+    }
+  ],
+  "reducedMotion": [
+    {
+      "engine": "chromium",
+      "environment": "local-build",
+      "preference": "reduce",
+      "initialFlavor": "MARGUERITA",
+      "laterFlavor": "CALABRESA",
+      "flavorChanged": true,
+      "cssAnimationDuration": "1e-05s"
+    }
+  ]
+}

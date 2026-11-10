@@ -1,0 +1,21 @@
+{
+  "url": "https://gama-pizzas-work.vercel.app/",
+  "scope": "one low-concurrency public check, GET / only",
+  "connections": 10,
+  "durationSeconds": 10,
+  "requests": 2977,
+  "requestsPerSecond": 297.7,
+  "latencyMs": {
+    "average": 33.34,
+    "p95": 65.6336,
+    "p99": 122.8136,
+    "max": 219
+  },
+  "statusCodes": {
+    "200": 540,
+    "403": 2437
+  },
+  "errors": 0,
+  "timeouts": 0,
+  "bytes": 63092853
+}

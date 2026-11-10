@@ -1,0 +1,78 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "server": "Vite preview over local production build",
+  "scenarios": [
+    {
+      "connections": 100,
+      "durationSeconds": 10,
+      "requests": 5164,
+      "requestsPerSecond": 737.72,
+      "latencyMs": {
+        "average": 205.94,
+        "p95": 968.1965,
+        "p99": 1284.6248,
+        "max": 1354
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "errorRatePct": 0,
+      "bytes": 9403644,
+      "serverProcess": {
+        "cpuSecondsBefore": 0.71875,
+        "cpuSecondsAfter": 6.5625,
+        "cpuSecondsDelta": 5.844,
+        "peakWorkingSetMB": 117.2,
+        "samples": 7
+      }
+    },
+    {
+      "connections": 500,
+      "durationSeconds": 10,
+      "requests": 6214,
+      "requestsPerSecond": 887.72,
+      "latencyMs": {
+        "average": 806.71,
+        "p95": 2661.8023,
+        "p99": 2664.7869,
+        "max": 2665
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "errorRatePct": 0,
+      "bytes": 11315694,
+      "serverProcess": {
+        "cpuSecondsBefore": 6.5625,
+        "cpuSecondsAfter": 13.9375,
+        "cpuSecondsDelta": 7.375,
+        "peakWorkingSetMB": 161.6,
+        "samples": 7
+      }
+    },
+    {
+      "connections": 1000,
+      "durationSeconds": 10,
+      "requests": 10952,
+      "requestsPerSecond": 1369,
+      "latencyMs": {
+        "average": 900.83,
+        "p95": 2180.9849,
+        "p99": 2223.0891,
+        "max": 2233
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "errorRatePct": 0,
+      "bytes": 19943592,
+      "serverProcess": {
+        "cpuSecondsBefore": 13.9375,
+        "cpuSecondsAfter": 22.8125,
+        "cpuSecondsDelta": 8.875,
+        "peakWorkingSetMB": 245.1,
+        "samples": 8
+      }
+    }
+  ]
+}

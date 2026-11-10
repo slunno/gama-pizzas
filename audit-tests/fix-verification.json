@@ -1,0 +1,140 @@
+[
+  {
+    "engine": "chromium",
+    "menu": {
+      "inert": true,
+      "focusedInsideMenu": false,
+      "expanded": "false"
+    },
+    "contrastAndTargets": {
+      "orangeDeep": "#a3470b",
+      "contrastPairs": [
+        {
+          "textSelector": ".flavors-section .rodizios-badge",
+          "ratio": 5.45
+        },
+        {
+          "textSelector": ".gallery-badge",
+          "ratio": 5.97
+        },
+        {
+          "textSelector": ".history-badge",
+          "ratio": 5.45
+        },
+        {
+          "textSelector": ".faq-subtitle",
+          "ratio": 5.51
+        }
+      ],
+      "lighthouseContrastResults": [
+        {
+          "selector": "div.rodizios-container > div.flavors-section > div.flavors-header > span.rodizios-badge",
+          "ratio": 5.45
+        },
+        {
+          "selector": "div.gallery-container > div.gallery-header > div > span.gallery-badge",
+          "ratio": 5.97
+        },
+        {
+          "selector": "div#gallery-album > div.gallery-details > div.gallery-photo-copy > span.gallery-photo-kicker",
+          "ratio": 5.97
+        },
+        {
+          "selector": "div.gallery-photo-menu > div.gallery-thumbnails > button.gallery-thumbnail > span.gallery-thumbnail-label",
+          "ratio": 5.97
+        },
+        {
+          "selector": "section#historia > div.history-container > div.history-content > span.history-badge",
+          "ratio": 5.45
+        },
+        {
+          "selector": "div.history-container > div.history-content > div.history-placeholder > span.history-coming-soon",
+          "ratio": 5.45
+        },
+        {
+          "selector": "section#faq > div.faq-container > div.faq-accordion-wrapper > span.faq-badge",
+          "ratio": 4.61
+        },
+        {
+          "selector": "section#faq > div.faq-container > div.faq-accordion-wrapper > p.faq-subtitle",
+          "ratio": 5.51
+        },
+        {
+          "selector": "div.accordion-item > div.accordion-body > div.accordion-content > p",
+          "ratio": 5.51
+        },
+        {
+          "selector": "body > div#root > footer.footer > div.footer-bottom",
+          "ratio": 10.42
+        }
+      ],
+      "targetButtons": [
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 44,
+          "height": 44
+        },
+        {
+          "width": 294,
+          "height": 44
+        },
+        {
+          "width": 294,
+          "height": 44
+        },
+        {
+          "width": 294,
+          "height": 44
+        },
+        {
+          "width": 294,
+          "height": 44
+        },
+        {
+          "width": 294,
+          "height": 44
+        }
+      ]
+    },
+    "reducedMotionFlavorStable": true
+  }
+]

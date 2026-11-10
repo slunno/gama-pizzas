@@ -190,7 +190,7 @@ function Rodizios() {
               <span>Deslize ou use as setas para comparar</span>
             </p>
 
-            <div className="menu-carousel-controls" aria-label="Controles do carrossel">
+            <div className="menu-carousel-controls" role="group" aria-label="Controles do carrossel">
               <button
                 type="button"
                 aria-label="Ver formato anterior"

@@ -193,14 +193,23 @@
 }
 
 .hero-pagination button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+}
+
+.hero-pagination button::before {
   width: 20px;
   height: 3px;
   border-radius: 99px;
+  content: "";
   background: rgba(255, 255, 255, 0.22);
   transition: width var(--transition), background var(--transition);
 }
 
-.hero-pagination button.active {
+.hero-pagination button.active::before {
   width: 42px;
   background: var(--orange);
 }
@@ -364,7 +373,7 @@
   }
 
   .hero-controls button {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
   }
 }

@@ -1,7 +1,7 @@
 :root {
   --orange: #f28c38;
   --orange-bright: #ff9f52;
-  --orange-deep: #d86c24;
+  --orange-deep: #a3470b;
   --ink: #0b0e1a;
   --ink-soft: #121626;
   --ink-elevated: #1a1f33;
@@ -9,7 +9,7 @@
   --paper: #fffdf9;
   --sand: #eadfd1;
   --text: #171927;
-  --text-muted: #676875;
+  --text-muted: #555664;
   --text-inverse: #fffaf3;
   --text-inverse-muted: #b9bbc8;
   --line: rgba(20, 22, 35, 0.12);
