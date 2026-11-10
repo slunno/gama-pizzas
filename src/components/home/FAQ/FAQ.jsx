@@ -18,12 +18,12 @@ const faqData = [
   {
     question: "Quanto tempo dura o atendimento do rodízio?",
     answer:
-      "Nossa equipe chega com cerca de 1h30 de antecedência para montagem e aquecimento do forno. O serviço de rodízio contínuo dura em média 3 a 4 horas com fartura ininterrupta, garantindo que todos os convidados comam à vontade.",
+      "Nossa equipe chega 45 minutos antes do início do rodízio para montar a estrutura e aquecer o forno. O rodízio dura 3 horas, com serviço contínuo.",
   },
   {
-    question: "Vocês levam pratos, talheres e descartáveis?",
+    question: "Vocês levam pratos, talheres ou porta-pizzas?",
     answer:
-      "Sim! Levamos pratos descartáveis reforçados, guardanapos e suporte completo. Se o seu evento exigir pratos de louça ou talheres de inox, podemos incluir mediante consulta prévia.",
+      "Não levamos talheres nem pratos descartáveis. Os porta-pizzas estão disponíveis como adicional, mediante solicitação.",
   },
   {
     question: "Quais cidades a Gama Pizzas atende?",

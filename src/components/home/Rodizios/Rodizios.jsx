@@ -18,8 +18,8 @@ import {
 const menus = [
   {
     id: 1,
-    title: "Rodízio Tradicional",
-    subtitle: "Cardápio 1 — 20 Sabores",
+    title: "Cardápio 1",
+    subtitle: "20 Sabores",
     icon: <FaPizzaSlice />,
     price: "55",
     child: "27",
@@ -28,7 +28,7 @@ const menus = [
       "6 sabores de pizzas doces",
       "Forno profissional levado ao local",
       "Pizzaiolo e preparo 100% ao vivo",
-      "Pratos e guardanapos descartáveis inclusos",
+      "Porta-pizzas disponíveis como adicional",
     ],
     minimum: "Mínimo 30 pessoas ou R$ 1.650",
     highlight: false,
@@ -36,8 +36,8 @@ const menus = [
   },
   {
     id: 2,
-    title: "Rodízio Completo",
-    subtitle: "Cardápio 2 — 30 Sabores",
+    title: "Cardápio 2",
+    subtitle: "30 Sabores",
     icon: <FaPizzaSlice />,
     price: "60",
     child: "30",
@@ -46,7 +46,7 @@ const menus = [
       "9 sabores doces (Sensação, Banoffee, M&M's)",
       "Forno profissional e equipe completa",
       "Fartura contínua do início ao fim",
-      "Pratos e descartáveis inclusos",
+      "Porta-pizzas disponíveis como adicional",
     ],
     minimum: "Mínimo 25 pessoas ou R$ 1.500",
     highlight: true,
@@ -87,24 +87,6 @@ const menus = [
     minimum: "Mínimo 25 pessoas ou R$ 1.625",
     highlight: true,
     tag: "Experiência VIP",
-  },
-  {
-    id: 5,
-    title: "Festival de Hambúrguer",
-    subtitle: "Apenas Lanches & Petiscos",
-    icon: <FaHamburger />,
-    price: "55",
-    child: "27",
-    features: [
-      "Mini hambúrguer gourmet artesanal",
-      "Mini hot dog especial",
-      "Batata frita à vontade",
-      "Mini churros quentinhos com doce de leite",
-      "Ideal para aniversários e confraternizações",
-    ],
-    minimum: "Consulte condições para seu evento",
-    highlight: false,
-    tag: "Especial Lanches",
   },
 ];
 
@@ -196,7 +178,7 @@ function Rodizios() {
           <h2>Escolha o formato perfeito para celebrar</h2>
           <p>
             Levamos toda a estrutura até seu salão, chácara ou casa: forno de alta temperatura,
-            ingredientes selecionados, pizzaiolos e descartáveis. Você só aproveita seus convidados.
+            ingredientes selecionados e equipe de pizzaiolos. Você só aproveita seus convidados.
           </p>
         </div>
 
@@ -285,7 +267,7 @@ function Rodizios() {
 
                 <a
                   href={buildWhatsAppLink(
-                    `Olá! Gostaria de consultar a disponibilidade do ${menu.title} (${menu.subtitle}) para o meu evento.`
+                    `Olá! Gostaria de consultar a disponibilidade do pacote ${menu.title} (${menu.subtitle}) para o meu evento.`
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
