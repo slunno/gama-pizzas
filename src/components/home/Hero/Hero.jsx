@@ -83,7 +83,7 @@ function Hero() {
 
           <dl className="hero-proof" aria-label="Números da Gama Pizzas">
             <div>
-              <dt>500+</dt>
+              <dt>1000+</dt>
               <dd>eventos realizados</dd>
             </div>
             <div>
