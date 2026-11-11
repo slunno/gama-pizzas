@@ -51,6 +51,24 @@ for (const [engine, launcher] of Object.entries({ chromium })) {
     await installLocalBuildRoute(page);
     await page.goto('http://gama-local.test/');
 
+    const comboCards = await page.locator('.menu-card').evaluateAll((cards) =>
+      cards.slice(2, 4).map((card) => ({
+        title: card.querySelector('.menu-titles h3')?.textContent.trim(),
+        subtitle: card.querySelector('.menu-subtitle')?.textContent.trim(),
+        tag: card.querySelector('.badge')?.textContent.trim(),
+        price: card.querySelector('.price .amount')?.textContent.trim(),
+        features: [...card.querySelectorAll('.feature-row span')].map((feature) => feature.textContent.trim()),
+      })),
+    );
+    assert.equal(comboCards.length, 2);
+    assert.equal(comboCards[0].title, comboCards[1].title);
+    assert.equal(comboCards[0].tag, comboCards[1].tag);
+    assert.match(comboCards[0].subtitle, /Cardápio 1/);
+    assert.match(comboCards[1].subtitle, /Cardápio 2/);
+    assert.deepEqual(comboCards[0].features.slice(1), comboCards[1].features.slice(1));
+    assert.ok(comboCards.every(({ features }) => features.includes('Mini hambúrguer artesanal à vontade')));
+    assert.ok(comboCards.every(({ features }) => features.includes('Equipe completa no local')));
+
     const menu = page.locator('#primary-navigation');
     await page.locator('.navbar-brand').focus();
     await page.keyboard.press('Tab');
@@ -136,7 +154,7 @@ for (const [engine, launcher] of Object.entries({ chromium })) {
     assert.equal(initiallyPaused, 1);
     assert.equal(laterFlavor, initialFlavor);
 
-    results.push({ engine, menu: closedMenuState, contrastAndTargets, reducedMotionFlavorStable: true });
+    results.push({ engine, comboCards, menu: closedMenuState, contrastAndTargets, reducedMotionFlavorStable: true });
     await reducedContext.close();
     await context.close();
   } finally {
@@ -148,8 +166,9 @@ await fs.writeFile(
   path.join(root, 'audit-tests', 'fix-verification.json'),
   JSON.stringify(results, null, 2),
 );
-console.log(JSON.stringify(results.map(({ engine, menu, contrastAndTargets }) => ({
+console.log(JSON.stringify(results.map(({ engine, comboCards, menu, contrastAndTargets }) => ({
   engine,
+  comboCards,
   menu,
   minimumContrast: Math.min(...contrastAndTargets.lighthouseContrastResults.map(({ ratio }) => ratio)),
   minimumTargetSize: Math.min(...contrastAndTargets.targetButtons.flatMap(({ width, height }) => [width, height])),
