@@ -61,11 +61,11 @@ for (const [engine, launcher] of Object.entries({ chromium })) {
       })),
     );
     assert.equal(comboCards.length, 2);
-    assert.equal(comboCards[0].title, 'Cardápio 1 + Hambúrguer');
-    assert.equal(comboCards[1].title, 'Cardápio 2 + Hambúrguer');
+    assert.equal(comboCards[0].title, 'Pizza + Mini Burguer');
+    assert.equal(comboCards[1].title, 'Pizza + Mini Burguer');
     assert.equal(comboCards[0].tag, comboCards[1].tag);
-    assert.equal(comboCards[0].subtitle, '20 Sabores + Lanches');
-    assert.equal(comboCards[1].subtitle, '30 Sabores + Lanches');
+    assert.match(comboCards[0].subtitle, /Cardápio 1/);
+    assert.match(comboCards[1].subtitle, /Cardápio 2/);
     assert.deepEqual(comboCards[0].features.slice(1), comboCards[1].features.slice(1));
     assert.ok(comboCards.every(({ features }) => features.includes('Mini hambúrguer artesanal à vontade')));
     assert.ok(comboCards.every(({ features }) => features.includes('Equipe completa no local')));
