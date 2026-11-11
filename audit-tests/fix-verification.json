@@ -3,8 +3,8 @@
     "engine": "chromium",
     "comboCards": [
       {
-        "title": "Pizza + Mini Burguer",
-        "subtitle": "Cardápio 1 — 20 Sabores + Lanches",
+        "title": "Cardápio 1 + Hambúrguer",
+        "subtitle": "20 Sabores + Lanches",
         "tag": "Combo com Lanches",
         "price": "60",
         "features": [
@@ -16,8 +16,8 @@
         ]
       },
       {
-        "title": "Pizza + Mini Burguer",
-        "subtitle": "Cardápio 2 — 30 Sabores + Lanches",
+        "title": "Cardápio 2 + Hambúrguer",
+        "subtitle": "30 Sabores + Lanches",
         "tag": "Combo com Lanches",
         "price": "65",
         "features": [

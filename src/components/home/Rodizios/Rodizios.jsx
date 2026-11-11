@@ -54,8 +54,8 @@ const menus = [
   },
   {
     id: 3,
-    title: "Pizza + Mini Burguer",
-    subtitle: "Cardápio 1 — 20 Sabores + Lanches",
+    title: "Cardápio 1 + Hambúrguer",
+    subtitle: "20 Sabores + Lanches",
     icon: <FaHamburger />,
     price: "60",
     child: "30",
@@ -72,8 +72,8 @@ const menus = [
   },
   {
     id: 4,
-    title: "Pizza + Mini Burguer",
-    subtitle: "Cardápio 2 — 30 Sabores + Lanches",
+    title: "Cardápio 2 + Hambúrguer",
+    subtitle: "30 Sabores + Lanches",
     icon: <FaHamburger />,
     price: "65",
     child: "33",
